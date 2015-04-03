@@ -1,4 +1,4 @@
-python "Entity.py"
+python "Player.py"
 
 pause
 del "%0"
