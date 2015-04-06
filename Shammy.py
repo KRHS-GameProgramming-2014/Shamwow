@@ -1,5 +1,6 @@
 import pygame, math
 from Entity import Entity
+from Player import Player
 
 class Shammy(pygame.sprite.Sprite):
 	def __init__(self, image, speed = [0,0], pos = [0,0]):
@@ -44,7 +45,7 @@ class Shammy(pygame.sprite.Sprite):
  				self.didBounceY = True
  				#print "hit xWall"
  		
- 	def collideBall(self, other):
+ 	def collidePlayer(self, other):
  		if self != other:
 			if (self.radius + other.radius) > self.distance(other.rect.center):
 				if not self.didBounceX:
