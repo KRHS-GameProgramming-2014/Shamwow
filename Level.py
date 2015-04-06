@@ -1,5 +1,6 @@
 import pygame, math, sys, time, os, random
 from Entity import Entity
+from levelChangeBlock import LevelChangeBlock
 from Player import Player
 from wall import Block
 
@@ -19,12 +20,12 @@ class Level():
         self.load(level)
         
     def killOldLevels(self, timeInSeconds):
-        for f in os.listdir("RSC/Levels/"):
+        for f in os.listdir("RSC/Level"):
             if f[-5:] == ".tngs":
-                print f, time.time() - os.path.getmtime("RSC/Maps/"+f), timeInSeconds
-                if (time.time() - os.path.getmtime("RSC/Maps/"+f)) > timeInSeconds:
+                print f, time.time() - os.path.getmtime("RSC/Level/"+f), timeInSeconds
+                if (time.time() - os.path.getmtime("RSC/Level/"+f)) > timeInSeconds:
                     print f
-                    os.remove("RSC/Maps/"+f)
+                    os.remove("RSC/Level/"+f)
             
 
     def unload(self):
@@ -37,8 +38,8 @@ class Level():
             line = []
         #print len(things), len(things[0])
         
-        for ghost in self.ghosts:
-            things[ghost.rect.center[1]/50][ghost.rect.center[0]/50] = "G"
+        for Entity in self.Entity:
+            things[Entity.rect.center[1]/50][Entity.rect.center[0]/50] = "G"
         for lc in self.levelChangeBlocks:
             things[lc.rect.center[1]/50][lc.rect.center[0]/50] = lc.kind
         
@@ -49,7 +50,7 @@ class Level():
             thingString += "\n"
         #print thingString
         
-        thingMap="RSC/Maps/"+ self.level +".tngs"
+        thingMap="RSC/Level/"+ self.level +".tngs"
         savedThingfile = open(thingMap, "w")
         savedThingfile.write(thingString)
         savedThingfile.close()
@@ -60,9 +61,8 @@ class Level():
             self.hardBlocks.remove(self.hardBlocks[0])
         while len(self.levelChangeBlocks) > 0:
             self.levelChangeBlocks.remove(self.levelChangeBlocks[0])
-        while len(self.ghosts) > 0:
-            self.ghosts.remove(self.ghosts[0])
-    """
+        while len(self.Entity) > 0:
+            self.Entity.remove(self.Entity[0])
     
     def load(self, level):  
         self.level = level
@@ -87,12 +87,12 @@ class Level():
         for y, line in enumerate(newlines):
             for x, c in enumerate(line):
                 if c == "#":
-                    self.hardBlocks += [Block("RSC/Background/mapblock2.png",
+                    self.hardBlocks += [Block("RSC/BackgroundImages/mapblock2.png",
                                     [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
                                     (self.blockSize,self.blockSize))]
                     self.blocks += [self.hardBlocks[-1]]
                 if c == "*":
-                    self.blocks += [Block("RSC/Block/block.png",
+                    self.blocks += [Block("RSC/BackgroundImages/block.png",
                                     [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
                                     (self.blockSize,self.blockSize))]
 
@@ -113,10 +113,10 @@ class Level():
         for y, line in enumerate(newlines):
             for x, c in enumerate(line): 
                 if c == "@":
-                    self.player = PlayerKaiju([(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)])
+                    self.player = Player([(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)])
                 if c == "j":
                     speeds = [[0,-5], [5,0], [0,5], [-5,0]]
-                    self.jaegers += [EnemyJaeger("RSC/Jaeger/gispy.png", 
+                    self.Entity += [Entity("RSC/Enemy/", 
                                         speeds[random.randint(0,3)],
                                         [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)]
                                     )]
