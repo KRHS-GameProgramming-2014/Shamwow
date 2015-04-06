@@ -30,12 +30,14 @@ all = pygame.sprite.OrderedUpdates()
 
 Entity.containers = (all, entities)
 Player.containers = (all, players)
+
 """
 BackGround.containers = (all, backgrounds)
 Block.containers = (all, blocks)
 Score.containers = (all, hudItems)
 """
 run = False
+
 """
 startButton = Button([width/2, height-300], 
 				 "images/Buttons/Start Base.png", 
