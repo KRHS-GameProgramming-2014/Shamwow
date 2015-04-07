@@ -1,7 +1,7 @@
 import pygame, sys, random
 from Entity import Entity
 from Player import Player
-#from Button import Button
+from MainMenu import Button
 #from BackGround import BackGround
 #from Level import Level
 #from Block import Block
@@ -18,8 +18,8 @@ bgColor = r,g,b = 0, 0, 10
 
 screen = pygame.display.set_mode(size)
 
-#bgImage = pygame.image.load("images/Screens/Start Screen.png").convert()
-#bgRect = bgImage.get_rect()
+bgImage = pygame.image.load("RSC/Enemy Images/yee.png").convert()
+bgRect = bgImage.get_rect()
 
 entities = pygame.sprite.Group()
 players = pygame.sprite.Group()
@@ -38,11 +38,11 @@ Score.containers = (all, hudItems)
 """
 run = False
 
-"""
+
 startButton = Button([width/2, height-300], 
-				 "images/Buttons/Start Base.png", 
-				 "images/Buttons/Start Clicked.png")
-"""
+				 "RSC/Enemy Images/yee.png", 
+				 "RSC/Enemy Images/sh.png")
+
 while True:
 	while not run:
 		for event in pygame.event.get():
