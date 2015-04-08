@@ -1,11 +1,10 @@
-import pygame, sys, random
+import pygame, math, sys, os
 from Entity import Entity
 from Player import Player
 from MainMenu import Button
 #from BackGround import BackGround
 #from Level import Level
 #from Block import Block
-
 pygame.init()
 
 clock = pygame.time.Clock()
@@ -18,8 +17,13 @@ bgColor = r,g,b = 0, 0, 10
 
 screen = pygame.display.set_mode(size)
 
-bgImage = pygame.image.load("RSC/Enemy Images/yee.png").convert()
+bgImage = pygame.image.load("RSC/Background Images/basichallway.png").convert()
+bgImage = pygame.transform.scale(bgImage, size)
 bgRect = bgImage.get_rect()
+
+startButton = Button([width/2, height-300], 
+				 "RSC/Enemy Images/yee.png", 
+				 "RSC/Enemy Images/sh.png")
 
 entities = pygame.sprite.Group()
 players = pygame.sprite.Group()
@@ -31,17 +35,10 @@ all = pygame.sprite.OrderedUpdates()
 Entity.containers = (all, entities)
 Player.containers = (all, players)
 
-"""
-BackGround.containers = (all, backgrounds)
-Block.containers = (all, blocks)
-Score.containers = (all, hudItems)
-"""
+#BackGround.containers = (all, backgrounds)
+#Block.containers = (all, blocks)
+
 run = False
-
-
-startButton = Button([width/2, height-300], 
-				 "RSC/Enemy Images/yee.png", 
-				 "RSC/Enemy Images/sh.png")
 
 while True:
 	while not run:
@@ -63,9 +60,9 @@ while True:
 	pygame.display.flip()
 	clock.tick(60)
 	
-	bgImage = pygame.image.load("images/Screens/Main Screen.png").convert()
+	bgImage = pygame.image.load("RSC/Enemy Images/yee.png").convert()
 	bgRect = bgImage.get_rect()
-	BackGround("images/Screens/Main Screen.png")
+	BackGround("RSC/Enemy Images/i-sell-towels.pngg")
 	
 	player = PlayerBall([width/2, height/2])
 	
@@ -99,13 +96,13 @@ while run:
 				player.go("stop down")
 			if event.key == pygame.K_a or event.key == pygame.K_LEFT:
 				player.go("stop left")
-		
+	"""	
 	if len(balls) < 10:
 		if random.randint(0, 1*60) == 0:
 				Ball("images/Ball/ball.png",
 					  [random.randint(0,10), random.randint(0,10)],
 					  [random.randint(100, width-100), random.randint(100, height-100)])
-						  
+	"""					  
 					  
 	if timerWait < timerWaitMax:
 		timerWait += 1
