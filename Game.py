@@ -61,9 +61,9 @@ while True:
     pygame.display.flip()
     clock.tick(60)
     
-    bgImage = pygame.image.load("images/Screens/Main Screen.png").convert()
+    bgImage = pygame.image.load("RSC/Background Images/basichallway.png").convert()
     bgRect = bgImage.get_rect()
-    BackGround("images/Screens/Main Screen.png")
+    Background("images/Screens/Main Screen.png")
     
     player = PlayerBall([width/2, height/2])
     
