@@ -17,7 +17,7 @@ bgColor = r,g,b = 0, 0, 10
 
 screen = pygame.display.set_mode(size)
 
-bgImage = pygame.image.load("RSC/Background Images/basichallway.png").convert()
+bgImage = pygame.image.load("RSC/Background Images/woodtexture.jpg").convert()
 bgImage = pygame.transform.scale(bgImage, size)
 bgRect = bgImage.get_rect()
 
@@ -36,9 +36,8 @@ Player.containers = (all, players)
 
 run = False
 
-
 startButton = Button([width/2, height-300], 
-				 "RSC/Enemy Images/yee.png", 
+				 "RSC/Enemy Images/i-sell-towels.png", 
 				 "RSC/Enemy Images/sh.png")
 
 while True:
