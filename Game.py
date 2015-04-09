@@ -62,19 +62,19 @@ while True:
     
     bgImage = pygame.image.load("RSC/Background Images/basichallway.png").convert()
     bgRect = bgImage.get_rect()
-    Background("images/Screens/Main Screen.png")
+    #Background("images/Screens/Main Screen.png")
     
-    player = PlayerBall([width/2, height/2])
+    #player = PlayerBall([width/2, height/2])
     
     
-    level = Level(size, 50)
-    level.loadLevel("1")
+    #level = Level(size, 50)
+    #level.loadLevel("1")
 
-    timer = Score([80, height - 25], "Time: ", 36)
-    timerWait = 0
-    timerWaitMax = 6
+    #timer = Score([80, height - 25], "Time: ", 36)
+    #timerWait = 0
+    #timerWaitMax = 6
 
-    score = Score([width-80, height-25], "Score: ", 36)
+    #score = Score([width-80, height-25], "Score: ", 36)
 while run:
     for event in pygame.event.get():
         if event.type == pygame.QUIT: sys.exit()
