@@ -60,7 +60,7 @@ while True:
     pygame.display.flip()
     clock.tick(60)
     
-    bgImage = pygame.image.load("RSC/Background Images/basichallway.png").convert()
+    bgImage = pygame.image.load("RSC/Background Images/woodtexture.jpg").convert()
     bgRect = bgImage.get_rect()
     #Background("images/Screens/Main Screen.png")
     
