@@ -62,6 +62,7 @@ while True:
     
     bgImage = pygame.image.load("RSC/Background Images/woodtexture.jpg").convert()
     bgRect = bgImage.get_rect()
+    """
     BackGround("images/Screens/Main Screen.png")
     
     player = PlayerBall([width/2, height/2])
@@ -75,6 +76,7 @@ while True:
     timerWaitMax = 6
 
     score = Score([width-80, height-25], "Score: ", 36)
+    """
 while run:
     for event in pygame.event.get():
         if event.type == pygame.QUIT: sys.exit()
