@@ -61,6 +61,7 @@ while True:
     clock.tick(60)
     
     bgImage = pygame.image.load("RSC/Background Images/woodtexture.jpg").convert()
+    bgImage = pygame.transform.scale(bgImage, size)
     bgRect = bgImage.get_rect()
     #Background("images/Screens/Main Screen.png")
     
