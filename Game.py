@@ -32,7 +32,7 @@ Entity.containers = (all, entities)
 Player.containers = (all, players)
 
 #BackGround.containers = (all, backgrounds)
-#Block.containers = (all, blocks)
+#Block.containers = (all, blocks) 
 
 run = False
 
@@ -60,7 +60,7 @@ while True:
     pygame.display.flip()
     clock.tick(60)
     
-    bgImage = pygame.image.load("RSC/Background Images/basichallway.png").convert()
+    bgImage = pygame.image.load("RSC/Background Images/woodtexture.jpg").convert()
     bgRect = bgImage.get_rect()
     BackGround("images/Screens/Main Screen.png")
     
