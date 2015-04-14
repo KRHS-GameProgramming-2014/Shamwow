@@ -2,7 +2,7 @@ import pygame, math, sys, os
 from Entity import Entity
 from Player import Player
 from MainMenu import Button
-#from BackGround import BackGround
+from BackGround import BackGround
 #from Level import Level
 #from Block import Block
 pygame.init()
@@ -32,7 +32,7 @@ Entity.containers = (all, entities)
 Player.containers = (all, players)
 
 #BackGround.containers = (all, backgrounds)
-#Block.containers = (all, blocks)
+#Block.containers = (all, blocks) 
 
 run = False
 
@@ -60,21 +60,24 @@ while True:
     pygame.display.flip()
     clock.tick(60)
     
-    bgImage = pygame.image.load("RSC/Background Images/basichallway.png").convert()
+    bgImage = pygame.image.load("RSC/Background Images/woodtexture.jpg").convert()
+    bgImage = pygame.transform.scale(bgImage, size)
     bgRect = bgImage.get_rect()
-    #Background("images/Screens/Main Screen.png")
+    """
+    BackGround("images/Screens/Main Screen.png")
     
-    #player = PlayerBall([width/2, height/2])
+    player = PlayerBall([width/2, height/2])
     
     
-    #level = Level(size, 50)
-    #level.loadLevel("1")
+    level = Level(size, 50)
+    level.loadLevel("1")
 
-    #timer = Score([80, height - 25], "Time: ", 36)
-    #timerWait = 0
-    #timerWaitMax = 6
+    timer = Score([80, height - 25], "Time: ", 36)
+    timerWait = 0
+    timerWaitMax = 6
 
-    #score = Score([width-80, height-25], "Score: ", 36)
+    score = Score([width-80, height-25], "Score: ", 36)
+    """
 while run:
     for event in pygame.event.get():
         if event.type == pygame.QUIT: sys.exit()
