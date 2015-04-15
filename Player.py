@@ -3,7 +3,7 @@ from Entity import Entity
  
 class Player(Entity):
 	def __init__(self, pos):
-		Entity.__init__(self, "images/Player/player1.png", [0,0], pos)
+		Entity.__init__(self, "images/Player/player1.png", [0,0], pos )
 		self.facing = "up"
 		self.changed = False
 		self.images = self.upImages
