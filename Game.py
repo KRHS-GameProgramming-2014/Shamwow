@@ -3,8 +3,8 @@ from Entity import Entity
 from Player import Player
 from MainMenu import Button
 from BackGround import BackGround
-#from Level import Level
-#from Block import Block
+from Level import Level
+from wall import Block
 pygame.init()
 
 clock = pygame.time.Clock()
@@ -31,8 +31,8 @@ all = pygame.sprite.OrderedUpdates()
 Entity.containers = (all, entities)
 Player.containers = (all, players)
 
-#BackGround.containers = (all, backgrounds)
-#Block.containers = (all, blocks) 
+BackGround.containers = (all, backgrounds)
+Block.containers = (all, blocks) 
 
 run = False
 
