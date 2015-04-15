@@ -87,12 +87,12 @@ class Level():
         for y, line in enumerate(newlines):
             for x, c in enumerate(line):
                 if c == "#":
-                    self.hardBlocks += [Block("RSC/BackgroundImages/mapblock2.png",
+                    self.hardBlocks += [Block("RSC/Background Images/mapblock2.png",
                                     [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
                                     (self.blockSize,self.blockSize))]
                     self.blocks += [self.hardBlocks[-1]]
                 if c == "*":
-                    self.blocks += [Block("RSC/BackgroundImages/block.png",
+                    self.blocks += [Block("RSC/Background Images/block.png",
                                     [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
                                     (self.blockSize,self.blockSize))]
 
