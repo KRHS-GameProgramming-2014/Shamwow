@@ -4,7 +4,7 @@ from Player import Player
 from MainMenu import Button
 from BackGround import BackGround
 from Level import Level
-from wall import Block
+#from Block import Block
 pygame.init()
 
 clock = pygame.time.Clock()
@@ -17,10 +17,6 @@ bgColor = r,g,b = 0, 0, 10
 
 screen = pygame.display.set_mode(size)
 
-bgImage = pygame.image.load("RSC/Background Images/woodtexture.jpg").convert()
-bgImage = pygame.transform.scale(bgImage, size)
-bgRect = bgImage.get_rect()
-
 entities = pygame.sprite.Group()
 players = pygame.sprite.Group()
 hudItems = pygame.sprite.Group()
@@ -32,13 +28,17 @@ Entity.containers = (all, entities)
 Player.containers = (all, players)
 
 BackGround.containers = (all, backgrounds)
-Block.containers = (all, blocks) 
-
-run = False
+#Block.containers = (all, blocks) 
 
 startButton = Button([width/2, height-300], 
-				 "RSC/Enemy Images/i-sell-towels.png", 
-				 "RSC/Enemy Images/sh.png")
+				 "RSC/menue/start.png", )
+				 #"RSC/menue/startpressed.jpg")
+
+bgImage = pygame.image.load("RSC/Background Images/woodtexture.jpg").convert()
+bgImage = pygame.transform.scale(bgImage, size)
+bgRect = bgImage.get_rect()
+
+run = False
 
 while True:
     while not run:
@@ -99,13 +99,13 @@ while run:
                 player.go("stop down")
             if event.key == pygame.K_a or event.key == pygame.K_LEFT:
                 player.go("stop left")
-        
+    """    
     if len(balls) < 10:
         if random.randint(0, 1*60) == 0:
                 Ball("images/Ball/ball.png",
                       [random.randint(0,10), random.randint(0,10)],
                       [random.randint(100, width-100), random.randint(100, height-100)])
-                          
+    """                      
     for block in level.hardBlocks:
             player.collideBlock(block)
             for Entity in Entity:

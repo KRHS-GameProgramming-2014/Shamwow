@@ -3,19 +3,7 @@ from Entity import Entity
  
 class Player(Entity):
 	def __init__(self, pos):
-		Entity.__init__(self, "images/Player/pballbu.png", [0,0], pos)
-		self.upImages = [pygame.image.load("images/Player/pballru.png"),
-						 pygame.image.load("images/Player/pballgu.png"),
-						 pygame.image.load("images/Player/pballbu.png")]
-		self.downImages = [pygame.image.load("images/Player/pballrd.png"),
-						   pygame.image.load("images/Player/pballgd.png"),
-						   pygame.image.load("images/Player/pballbd.png")]
-		self.leftImages = [pygame.image.load("images/Player/pballrl.png"),
-						   pygame.image.load("images/Player/pballgl.png"),
-						   pygame.image.load("images/Player/pballbl.png")]
-		self.rightImages = [pygame.image.load("images/Player/pballrr.png"),
-							pygame.image.load("images/Player/pballgr.png"),
-							pygame.image.load("images/Player/pballbr.png")]
+		Entity.__init__(self, "images/Player/player1.png", [0,0], pos )
 		self.facing = "up"
 		self.changed = False
 		self.images = self.upImages
