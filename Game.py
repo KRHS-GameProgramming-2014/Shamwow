@@ -4,7 +4,7 @@ from Player import Player
 from MainMenu import Button
 from BackGround import BackGround
 from Level import Level
-#from Block import Block
+#from wall import Block
 pygame.init()
 
 clock = pygame.time.Clock()
@@ -30,11 +30,14 @@ Player.containers = (all, players)
 BackGround.containers = (all, backgrounds)
 #Block.containers = (all, blocks) 
 
-startButton = Button([width/2, height-300], 
-				 "RSC/menue/start.png", )
-				 #"RSC/menue/startpressed.jpg")
+bgImage = pygame.image.load("RSC/Background Images/mainmenuthing.png").convert()
+bgRect = bgImage.get_rect()
 
-bgImage = pygame.image.load("RSC/Background Images/woodtexture.jpg").convert()
+startButton = Button([width/2, height-350], 
+                                     "RSC/menue/start.png", 
+                                     "RSC/menue/startpressed.jpg")
+
+bgImage = pygame.image.load("RSC/Background Images/basichallway.png").convert()
 bgImage = pygame.transform.scale(bgImage, size)
 bgRect = bgImage.get_rect()
 
@@ -63,21 +66,15 @@ while True:
     bgImage = pygame.image.load("RSC/Background Images/woodtexture.jpg").convert()
     bgImage = pygame.transform.scale(bgImage, size)
     bgRect = bgImage.get_rect()
-    """
-    BackGround("images/Screens/Main Screen.png")
     
-    player = PlayerBall([width/2, height/2])
+    BackGround("RSC/Background Images/basichallway.png")
+    
+    player = Player([width/2, height/2])
     
     
     level = Level(size, 50)
     level.loadLevel("1")
-
-    timer = Score([80, height - 25], "Time: ", 36)
-    timerWait = 0
-    timerWaitMax = 6
-
-    score = Score([width-80, height-25], "Score: ", 36)
-    """
+    
 while run:
     for event in pygame.event.get():
         if event.type == pygame.QUIT: sys.exit()
