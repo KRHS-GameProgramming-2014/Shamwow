@@ -4,7 +4,7 @@ from Player import Player
 from MainMenu import Button
 from BackGround import BackGround
 from Level import Level
-#from Block import Block
+from wall import Block
 pygame.init()
 
 clock = pygame.time.Clock()
