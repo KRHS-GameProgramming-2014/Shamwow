@@ -22,11 +22,12 @@ players = pygame.sprite.Group()
 hudItems = pygame.sprite.Group()
 backgrounds = pygame.sprite.Group()
 blocks = pygame.sprite.Group()
+level = pygame.sprite.Group()
 all = pygame.sprite.OrderedUpdates()
 
 Entity.containers = (all, entities)
 Player.containers = (all, players)
-
+Level.containers = (all, level)
 BackGround.containers = (all, backgrounds)
 #Block.containers = (all, blocks) 
 
@@ -79,6 +80,7 @@ while True:
 
     score = Score([width-80, height-25], "Score: ", 36)
     """
+    
     while run:
         for event in pygame.event.get():
             if event.type == pygame.QUIT: sys.exit()
