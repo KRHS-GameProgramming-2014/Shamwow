@@ -5,20 +5,18 @@ from Player import Player
 from wall import Block
 
 class Level():
-    def __init__(self, level, screenSize):
+    def __init__(self, blockSize, screenSize):
         self.screenSize = screenSize
-        self.screenWidth = screenSize[0]
-        self.screenHeight = screenSize[1]
-        self.blocks = []
-        self.hardBlocks = []
-        
+        self.blockSize = blockSize
+        self.level = ""
+        """
         self.levelChangeBlocks = []
         self.Entity = []
         
         self.blockSize = 70
         self.level = level
         self.load(level)
-        
+        """
     def killOldLevels(self, timeInSeconds):
         for f in os.listdir("RSC/Level"):
             if f[-5:] == ".tngs":
@@ -64,59 +62,27 @@ class Level():
         while len(self.Entity) > 0:
             self.Entity.remove(self.Entity[0])
     
-    def load(self, level):  
+    def loadLevel(self, level):  
         self.level = level
         print self.level
-        geoMap="RSC/Level/"+ level +".lvl"
-        thingMap="RSC/Level/"+ level +".tng"
+        levelFile = "RSC/Level/Level" + level + ".lvl"
 
-        geofile = open(geoMap, "r")
-        lines = geofile.readlines()
-        geofile.close()
-        newlines = []
+        f = open(levelFile, "r")
+        lines = f.readlines()
+        f.close()
         
 
         #Clean up the file by stripping newlines!
         for line in lines:
             newline = ""
-            for character in line:
-                if character != "\n":
-                    newline += character
-            newlines += [newline]
-
-        for y, line in enumerate(newlines):
+            for c in line:
+                if c != "\n":
+                    newline += c
+                newlines += [newline]
+                
+        lines = newlines
+        
+        for y, line in enumerate(lines):
             for x, c in enumerate(line):
                 if c == "#":
-                    self.hardBlocks += [Block("RSC/Background Images/mapblock2.png",
-                                    [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
-                                    (self.blockSize,self.blockSize))]
-                    self.blocks += [self.hardBlocks[-1]]
-                if c == "*":
-                    self.blocks += [Block("RSC/Background Images/block.png",
-                                    [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
-                                    (self.blockSize,self.blockSize))]
-
-        
-        thingfile = open(thingMap, "r")
-        lines = thingfile.readlines()
-        thingfile.close()
-
-        newlines = []
-
-        for line in lines:
-            newline = ""
-            for character in line:
-                if character != "\n":
-                    newline += character
-            newlines += [newline]
-
-        for y, line in enumerate(newlines):
-            for x, c in enumerate(line): 
-                if c == "@":
-                    self.player = Player([(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)])
-                if c == "j":
-                    speeds = [[0,-5], [5,0], [0,5], [-5,0]]
-                    self.Entity += [Entity("RSC/Enemy Images/ththing/OH.png", 
-                                        speeds[random.randint(0,3)],
-                                        [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)]
-                                    )]
+                    Block("RSC/Background Images/mapblock2.png", [x*self.blockSize,y*self.BlockSize])
