@@ -67,8 +67,8 @@ class Level():
     def load(self, level):  
         self.level = level
         print self.level
-        geoMap="RSC/Levels/"+ level +".lvl"
-        thingMap="RSC/Levels/"+ level +".tng"
+        geoMap="RSC/Level/"+ level +".lvl"
+        thingMap="RSC/Level/"+ level +".tng"
 
         geofile = open(geoMap, "r")
         lines = geofile.readlines()
@@ -116,7 +116,7 @@ class Level():
                     self.player = Player([(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)])
                 if c == "j":
                     speeds = [[0,-5], [5,0], [0,5], [-5,0]]
-                    self.Entity += [Entity("RSC/Enemy/", 
+                    self.Entity += [Entity("RSC/Enemy Images/ththing/OH.png", 
                                         speeds[random.randint(0,3)],
                                         [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)]
                                     )]

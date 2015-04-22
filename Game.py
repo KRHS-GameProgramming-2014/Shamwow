@@ -29,7 +29,7 @@ Entity.containers = (all, entities)
 Player.containers = (all, players)
 Level.containers = (all, level)
 BackGround.containers = (all, backgrounds)
-#Block.containers = (all, blocks) 
+Block.containers = (all, blocks) 
 
 startButton = Button([width/2, height-300], 
                     "RSC/menue/start.png",
@@ -42,7 +42,7 @@ bgRect = bgImage.get_rect()
 run = False
 
 while True:
-    bgImage = pygame.image.load("RSC/Background Images/woodtexture.jpg").convert()
+    bgImage = pygame.image.load("RSC/Background Images/mainmenuthing.png").convert()
     bgImage = pygame.transform.scale(bgImage, size)
     bgRect = bgImage.get_rect()
     while not run:
@@ -66,14 +66,14 @@ while True:
         
     
         
-    BackGround("RSC/Background Images/mainmenuthing.png")
+    BackGround("RSC/Background Images/basichallway.png")
     """
     player = PlayerBall([width/2, height/2])
     
-    
+    """
     level = Level(size, 50)
     level.loadLevel("1")
-
+    """
     timer = Score([80, height - 25], "Time: ", 36)
     timerWait = 0
     timerWaitMax = 6
@@ -102,41 +102,18 @@ while True:
                     player.go("stop down")
                 if event.key == pygame.K_a or event.key == pygame.K_LEFT:
                     player.go("stop left")
-        """    
-        if len(balls) < 10:
-            if random.randint(0, 1*60) == 0:
-                    Ball("images/Ball/ball.png",
-                          [random.randint(0,10), random.randint(0,10)],
-                          [random.randint(100, width-100), random.randint(100, height-100)])
-        """                      
-        for block in level.hardBlocks:
-                player.collideBlock(block)
-                for Entity in Entity:
-                    Entity.collideBlock(block)
-                          
-        if timerWait < timerWaitMax:
-            timerWait += 1
-        else:
-            timerWait = 0
-            timer.increaseScore(.1)
-            
-            playersHitBalls = pygame.sprite.groupcollide(players, balls, False, True)
-            ballsHitBalls = pygame.sprite.groupcollide(balls, balls, False, False)
-            
-            for player in playersHitBalls:
-                for ball in playersHitBalls[player]:
-                    score.increaseScore(1)
-                    
-            for bully in ballsHitBalls:
-                for victem in ballsHitBalls[bully]:
-                        bully.collideBall(victem)
-                        
-            for block in level.blocks:
-                screen.blit(block.image, block.rect)
         
-            all.update(width, height)
+                          
+    
+        playersHitBlocks = pygame.sprite.groupcollide(players, blocks, False, False)
+        
+        for player in playersHitBlocks:
+            for block in playersHitBlocks[player]:
+                player.collideWall(block)
+    
+        all.update(width, height)
 
-            dirty = all.draw(screen)
-            pygame.display.update(dirty)
+        dirty = all.draw(screen)
+        pygame.display.update(dirty)
         pygame.display.flip()
         clock.tick(60)
