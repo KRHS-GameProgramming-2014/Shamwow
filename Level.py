@@ -85,4 +85,6 @@ class Level():
         for y, line in enumerate(lines):
             for x, c in enumerate(line):
                 if c == "#":
-                    Block("RSC/Background Images/mapblock2.png", [x*self.blockSize,y*self.blockSize])
+                    Block("RSC/Background Images/mapblock2.png", 
+						  [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+                          (self.blockSize,self.blockSize))
