@@ -9,14 +9,14 @@ class Level():
         self.screenSize = screenSize
         self.blockSize = blockSize
         self.level = ""
-        """
+        
         self.levelChangeBlocks = []
         self.Entity = []
         
         self.blockSize = 70
         self.level = level
         self.load(level)
-        """
+        
     def killOldLevels(self, timeInSeconds):
         for f in os.listdir("RSC/Level"):
             if f[-5:] == ".tngs":
