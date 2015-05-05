@@ -6,7 +6,7 @@ from BackGround import BackGround
 from Level import Level
 from wall import Block
 pygame.init()
-
+ 
 clock = pygame.time.Clock()
 
 width = 800 
