@@ -66,10 +66,8 @@ while True:
     
         
     BackGround("RSC/Background Images/basichallway.png")
-    """
-    player = PlayerBall([width/2, height/2])
-    
-    """
+    player = Player([width/2, height/2])
+
     level = Level(50, size)
     level.loadLevel("1")
     """

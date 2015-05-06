@@ -27,7 +27,7 @@ class Player(Entity):
         self = args[0]
         width = args[1]
         height = args[2]
-        Ball.update(self, width, height)
+        Entity.update(self, width, height)
         self.animate()
         self.changed = False
         
