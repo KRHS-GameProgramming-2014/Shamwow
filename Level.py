@@ -5,18 +5,18 @@ from Player import Player
 from wall import Block
 
 class Level():
-    def __init__(self, blockSize, screenSize):
+    def __init__(self, blockSize, screenSize, level):
         self.screenSize = screenSize
         self.blockSize = blockSize
         self.level = ""
-        """
+        
         self.levelChangeBlocks = []
         self.Entity = []
         
         self.blockSize = 70
-        self.level = level
-        self.load(level)
-        """
+        self.level = []
+        self.loadLevel(level)
+        
     def killOldLevels(self, timeInSeconds):
         for f in os.listdir("RSC/Level"):
             if f[-5:] == ".tngs":
