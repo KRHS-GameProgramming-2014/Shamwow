@@ -65,7 +65,7 @@ class Level():
     def loadLevel(self, level):  
         self.level = level
         print self.level
-        levelFile = "RSC/Level/Level" + level + ".lvl"
+        levelFile = "RSC/Level/" + "Level1" + ".lvl"
 
         f = open(levelFile, "r")
         lines = f.readlines()
@@ -85,6 +85,6 @@ class Level():
         for y, line in enumerate(lines):
             for x, c in enumerate(line):
                 if c == "#":
-                    Block("RSC/Background Images/mapblock2.png", 
+                    Block("RSC/Background Images/WELLBLEKC.png", 
 						  [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
                           (self.blockSize,self.blockSize))
