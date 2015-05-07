@@ -3,15 +3,15 @@ from Entity import Entity
 
 class Player(Entity):
     def __init__(self, pos):
-        Entity.__init__(self, "RSC/Player Images/player1.png", [0,0], pos)
-        self.upImages = [pygame.image.load("RSC/Player Images/playerSpeak1.png"),
-                            pygame.image.load("RSC/Player Images/playerSpeak2.png")]
-        self.downImages = [pygame.image.load("RSC/Player Images/playerSpeak1.png"),
-                            pygame.image.load("RSC/Player Images/playerSpeak2.png")]
-        self.leftImages = [pygame.image.load("RSC/Player Images/playerSpeak1.png"),
-                            pygame.image.load("RSC/Player Images/playerSpeak2.png")]
-        self.rightImages = [pygame.image.load("RSC/Player Images/playerSpeak1.png"),
-                            pygame.image.load("RSC/Player Images/playerSpeak2.png")]
+        Entity.__init__(self, "RSC/Player Images/playerstep1.png", [0,0], pos)
+        self.upImages = [pygame.image.load("RSC/Player Images/playerstep1.png"),
+                            pygame.image.load("RSC/Player Images/playerstep2.png")]
+        self.downImages = [pygame.image.load("RSC/Player Images/playerstep1.png"),
+                            pygame.image.load("RSC/Player Images/playerstep2.png")]
+        self.leftImages = [pygame.image.load("RSC/Player Images/playerstep1.png"),
+                            pygame.image.load("RSC/Player Images/playerstep2.png")]
+        self.rightImages = [pygame.image.load("RSC/Player Images/playerstep1.png"),
+                            pygame.image.load("RSC/Player Images/playerstep2.png")]
         self.facing = "up"
         self.changed = False
         self.images = self.upImages
