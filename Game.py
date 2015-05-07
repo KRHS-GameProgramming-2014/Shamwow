@@ -70,6 +70,7 @@ while True:
 
     level = Level(50, size)
     level.loadLevel("1")
+    print blocks.sprites()
     """
     timer = Score([80, height - 25], "Time: ", 36)
     timerWait = 0

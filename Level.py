@@ -63,12 +63,15 @@ class Level():
     def loadLevel(self, level):  
         self.level = level
         print self.level
-        levelFile = "RSC/Level/" + "Level1" + ".lvl"
+        levelFile = "RSC/Level/" + "Level" + level +".lvl"
+        print levelFile
 
         f = open(levelFile, "r")
         lines = f.readlines()
         f.close()
-        
+        for line in lines:
+			print line
+        """"
         newlines = []
         #Clean up the file by stripping newlines!
         for line in lines:
@@ -77,12 +80,16 @@ class Level():
                 if c != "\n":
                     newline += c
                 newlines += [newline]
-                
+        print len(newlines), len(lines)        
         lines = newlines
         
+        """
         for y, line in enumerate(lines):
             for x, c in enumerate(line):
                 if c == "#":
+                    print "block", x, y
                     Block("RSC/Background Images/WELLBLEKC.png", 
-						  [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
-                          (self.blockSize,self.blockSize))
+                          )
+
+#[(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+ #                         (self.blockSize,self.blockSize)
