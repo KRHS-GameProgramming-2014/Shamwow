@@ -103,7 +103,7 @@ while True:
         
         for player in playersHitBlocks:
             for block in playersHitBlocks[player]:
-                player.collideWall(block)
+                player.collideWall(block,)
     
         all.update(width, height)
 
