@@ -4,14 +4,14 @@ from Entity import Entity
 class Player(Entity):
     def __init__(self, pos):
         Entity.__init__(self, "RSC/Player Images/playerstep1.png", [0,0], pos)
-        self.upImages = [pygame.image.load("RSC/Player Images/playerstep1.png"),
-                            pygame.image.load("RSC/Player Images/playerstep2.png")]
+        self.upImages = [pygame.image.load("RSC/Player Images/playerbackstep1.png"),
+                            pygame.image.load("RSC/Player Images/playerbackstep2.png")]
         self.downImages = [pygame.image.load("RSC/Player Images/playerstep1.png"),
                             pygame.image.load("RSC/Player Images/playerstep2.png")]
-        self.leftImages = [pygame.image.load("RSC/Player Images/playerstep1.png"),
-                            pygame.image.load("RSC/Player Images/playerstep2.png")]
-        self.rightImages = [pygame.image.load("RSC/Player Images/playerstep1.png"),
-                            pygame.image.load("RSC/Player Images/playerstep2.png")]
+        self.leftImages = [pygame.image.load("RSC/Player Images/player1side.png"),
+                            pygame.image.load("RSC/Player Images/playerside1step.png")]
+        self.rightImages = [pygame.image.load("RSC/Player Images/player2side.png"),
+                            pygame.image.load("RSC/Player Images/playerside2step.png")]
         self.facing = "up"
         self.changed = False
         self.images = self.upImages
@@ -21,7 +21,7 @@ class Player(Entity):
         self.maxWait = 60*.25
         self.image = self.images[self.frame]
         self.rect = self.image.get_rect(center = self.rect.center)
-        self.maxSpeed = 10
+        self.maxSpeed = 5
             
     def update(*args):
         self = args[0]
