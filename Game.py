@@ -44,6 +44,7 @@ while True:
     bgImage = pygame.image.load("RSC/Background Images/mainmenuthing.png").convert()
     bgImage = pygame.transform.scale(bgImage, size)
     bgRect = bgImage.get_rect()
+    
     while not run:
         for event in pygame.event.get():
             if event.type == pygame.QUIT: sys.exit()
@@ -63,8 +64,6 @@ while True:
         pygame.display.flip()
         clock.tick(60)
         
-    
-        
     BackGround("RSC/Background Images/basichallway.png")
     player = Player([width/2, height/2])
 
@@ -75,7 +74,6 @@ while True:
     timer = Score([80, height - 25], "Time: ", 36)
     timerWait = 0
     timerWaitMax = 6
-
     score = Score([width-80, height-25], "Score: ", 36)
     """
     
@@ -100,14 +98,12 @@ while True:
                     player.go("stop down")
                 if event.key == pygame.K_a or event.key == pygame.K_LEFT:
                     player.go("stop left")
-        
-                          
-    
+                    
         playersHitBlocks = pygame.sprite.groupcollide(players, blocks, False, False)
         
         for player in playersHitBlocks:
             for block in playersHitBlocks[player]:
-                player.collideWall(block)
+                player.collideWall(block,)
     
         all.update(width, height)
 

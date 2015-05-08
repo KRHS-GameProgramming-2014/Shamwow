@@ -27,18 +27,46 @@ class Entity(pygame.sprite.Sprite):
  		self.move()
  		self.collideWall(width, height)
  		
- 	def animate(self):
-		if self.waitCount < self.maxWait:
-			self.waitCount += .55
-		else:
-			self.waitCount = 0
-			self.facingChanged = True
-			if self.frame < self.maxFrame:
-				self.frame += 1
-			else:
-				self.frame = 0
-			self.image = self.images[self.frame]
-				
+    def animate(self):
+        if self.waitCount < self.maxWait:
+            self.waitCount += 1
+        else:
+            self.waitCount = 0
+            self.changed = True
+        if self.frame < self.maxFrame:
+            self.frame += 1
+        else:
+            self.frame = 0
+
+        if self.changed:    
+        if self.facing == "up":
+            self.images = self.upImages
+            elif self.facing == "down":
+                self.images = self.downImages
+            elif self.facing == "right":
+                self.images = self.rightImages
+            elif self.facing == "left":
+                self.images = self.leftImages
+            
+            self.image = self.images[self.frame]
+        
+        if self.changed:    
+            if self.facing == "up":
+                if self.shooting:
+                    self.images = self.upRangedImages
+                elif self.stabbing:
+                    self.images = self.upKnifeImages
+                else:
+                    self.images = self.upImages
+            elif self.facing == "down":
+                self.images = self.downImages
+            elif self.facing == "right":
+                self.images = self.rightImages
+            elif self.facing == "left":
+                self.images = self.leftImages
+            
+            self.image = self.images[self.frame]
+            		
  	def move(self):
  		self.rect = self.rect.move(self.speed)
  		
