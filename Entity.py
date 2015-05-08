@@ -39,16 +39,16 @@ class Entity(pygame.sprite.Sprite):
             self.frame = 0
 
         if self.changed:    
-        if self.facing == "up":
-            self.images = self.upImages
+            if self.facing == "up":
+                self.images = self.upImages
             elif self.facing == "down":
                 self.images = self.downImages
             elif self.facing == "right":
                 self.images = self.rightImages
             elif self.facing == "left":
                 self.images = self.leftImages
-            
-            self.image = self.images[self.frame]
+                
+                self.image = self.images[self.frame]
         
         if self.changed:    
             if self.facing == "up":

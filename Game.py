@@ -76,7 +76,7 @@ while True:
     timerWaitMax = 6
     score = Score([width-80, height-25], "Score: ", 36)
     """
-    
+     
     while run:
         for event in pygame.event.get():
             if event.type == pygame.QUIT: sys.exit()
