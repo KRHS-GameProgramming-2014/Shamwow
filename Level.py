@@ -13,7 +13,7 @@ class Level():
         self.levelChangeBlocks = []
         self.Entity = []
         
-        self.blockSize = 70
+        #self.blockSize = 70
         
     def killOldLevels(self, timeInSeconds):
         for f in os.listdir("RSC/Level"):
@@ -89,7 +89,4 @@ class Level():
                 if c == "#":
                     print "block", x, y
                     Block("RSC/Props/PLENT.png", 
-                          )
-
-#[(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
- #                         (self.blockSize,self.blockSize)
+                          [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)])
