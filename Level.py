@@ -87,6 +87,6 @@ class Level():
         for y, line in enumerate(lines):
             for x, c in enumerate(line):
                 if c == "#":
-                    print "block", x, y
+                    #print "block", x, y
                     Block("RSC/Props/PLENT.png", 
                           [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)])

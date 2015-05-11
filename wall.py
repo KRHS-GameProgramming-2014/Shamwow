@@ -8,7 +8,7 @@ class Block(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.place(pos)
         #self.living = true
-        print pos
+        #print pos
         
     def place(self, pos):
         self.rect.topleft = pos
