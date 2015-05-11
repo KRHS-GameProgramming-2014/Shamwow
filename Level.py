@@ -70,14 +70,14 @@ class Level():
         lines = f.readlines()
         f.close()
         for line in lines:
-			print line
+            print line
         """"
         newlines = []
         #Clean up the file by stripping newlines!
         for line in lines:
             newline = ""
             for c in line:
-                if c != "\n":
+                if c != "\n"
                     newline += c
                 newlines += [newline]
         print len(newlines), len(lines)        
@@ -89,4 +89,10 @@ class Level():
                 if c == "#":
                     #print "block", x, y
                     Block("RSC/Props/PLENT.png", 
+                          [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)])
+                if c == "@":
+                    Block("RSC/Background Images/wlaklnra.png",
+                          [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)])
+                if c == "!":
+                    Block("RSC/Background Images/WELLBLEKC.png",
                           [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)])
