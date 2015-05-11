@@ -44,17 +44,15 @@ class Player(Entity):
                 self.didBounceY = True
                 #print "hit xWall"
     
-    def collideInnerWall(self, width, height):
+    def collideBlock(self,block):
         if not self.didBounceX:
             #print "trying to hit Wall"
-            if self.rect.left < 0 or self.rect.right > width:
-                self.speedx = 0
-                self.didBounceX = True
+            self.speedx = 0
+            self.didBounceX = True
                 #print "hit xWall"
-        if not self.didBounceY:
-            if self.rect.top < 0 or self.rect.bottom > height:
-                self.speedy = 0
-                self.didBounceY = True
+        if not self.didBounceY:        
+            self.speedy = 0
+            self.didBounceY = True
                 #print "hit xWall"
 
     def animate(self):
