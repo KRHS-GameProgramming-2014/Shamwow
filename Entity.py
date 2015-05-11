@@ -26,7 +26,7 @@ class Entity(pygame.sprite.Sprite):
         self.speed = [self.speedx, self.speedy]
         self.move()
         self.collideWall(width, height)
-
+        
     def animate(self):
         if self.waitCount < self.maxWait:
             self.waitCount += 1
