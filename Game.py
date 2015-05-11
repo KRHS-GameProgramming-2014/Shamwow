@@ -67,10 +67,10 @@ while True:
     BackGround("RSC/Background Images/basichallway.png")
     player = Player([width/2, height/2])
 
-    level = Level(20, size)
+    level = Level(50, size)
     level.loadLevel("1")
     for b in blocks.sprites():
-		printgoober b.rect.center
+		print b.rect.center
     """
     timer = Score([80, height - 25], "Time: ", 36)
     timerWait = 0
@@ -104,7 +104,7 @@ while True:
         
         for player in playersHitBlocks:
             for block in playersHitBlocks[player]:
-                player.collideBlock(Block )
+                player.collideBlock(Block)
     
         all.update(width, height)
 
