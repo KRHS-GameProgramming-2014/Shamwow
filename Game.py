@@ -32,7 +32,7 @@ BackGround.containers = (all, backgrounds)
 Block.containers = (all, blocks) 
 
 startButton = Button([width/2, height-300], 
-                    "RSC/menue/start.png")
+                    "RSC/menue/startbutton.png")
 
 bgImage = pygame.image.load("RSC/Background Images/basichallway.png").convert()
 bgImage = pygame.transform.scale(bgImage, size)
