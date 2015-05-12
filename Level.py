@@ -96,3 +96,6 @@ class Level():
                 if c == "!":
                     Block("RSC/Background Images/WELLBLEKC.png",
                           [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)])
+                if c == "$":
+					Block("RSC/Background Images/dfaesdfaesdfaesdfaesdfaesdfaesdfaesdfaesdfaesdfaes.png",
+					      [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)])
