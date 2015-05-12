@@ -10,7 +10,7 @@ pygame.init()
  
 clock = pygame.time.Clock()
 
-width = 800 
+width = 1050
 height = 600
 size = width, height
 
@@ -70,7 +70,7 @@ while True:
     BackGround("RSC/Background Images/basichallway.png")
     player = Player([width/2, height/2])
 
-    level = Level(50, size)
+    level = Level(75, size)
     level.loadLevel("1")
     for b in blocks.sprites():
 		print b.rect.center
