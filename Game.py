@@ -5,11 +5,12 @@ from MainMenu import Button
 from BackGround import BackGround
 from Level import Level
 from wall import Block
+from Shammy import Shammy
 pygame.init()
  
 clock = pygame.time.Clock()
 
-width = 800 
+width = 1050
 height = 600
 size = width, height
 
@@ -23,10 +24,12 @@ hudItems = pygame.sprite.Group()
 backgrounds = pygame.sprite.Group()
 blocks = pygame.sprite.Group()
 level = pygame.sprite.Group()
+shammy = pygame.sprite.Group()
 all = pygame.sprite.OrderedUpdates()
 
 Entity.containers = (all, entities)
 Player.containers = (all, players)
+Shammy.containers = (all, shammy)
 Level.containers = (all, level)
 BackGround.containers = (all, backgrounds)
 Block.containers = (all, blocks) 
@@ -67,7 +70,7 @@ while True:
     BackGround("RSC/Background Images/basichallway.png")
     player = Player([width/2, height/2])
 
-    level = Level(50, size)
+    level = Level(75, size)
     level.loadLevel("1")
     for b in blocks.sprites():
 		print b.rect.center

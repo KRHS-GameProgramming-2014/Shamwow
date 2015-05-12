@@ -89,13 +89,17 @@ class Level():
                 if c == "#":
                     #print "block", x, y
                     Block("RSC/Props/PLENT.png", 
-                          [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)])
+                          [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+                          self.blockSize)
                 if c == "@":
                     Block("RSC/Background Images/wlaklnra.png",
-                          [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)])
+                          [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+                          self.blockSize)
                 if c == "!":
                     Block("RSC/Background Images/WELLBLEKC.png",
-                          [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)])
+                          [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+                          self.blockSize)
                 if c == "$":
 					Block("RSC/Background Images/dfaesdfaesdfaesdfaesdfaesdfaesdfaesdfaesdfaesdfaes.png",
-					      [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)])
+					      [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+                          self.blockSize)
