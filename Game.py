@@ -5,6 +5,7 @@ from MainMenu import Button
 from BackGround import BackGround
 from Level import Level
 from wall import Block
+from Shammy import Shammy
 pygame.init()
  
 clock = pygame.time.Clock()
@@ -23,10 +24,12 @@ hudItems = pygame.sprite.Group()
 backgrounds = pygame.sprite.Group()
 blocks = pygame.sprite.Group()
 level = pygame.sprite.Group()
+shammy = pygame.sprite.Group()
 all = pygame.sprite.OrderedUpdates()
 
 Entity.containers = (all, entities)
 Player.containers = (all, players)
+Shammy.containers = (all, shammy)
 Level.containers = (all, level)
 BackGround.containers = (all, backgrounds)
 Block.containers = (all, blocks) 
