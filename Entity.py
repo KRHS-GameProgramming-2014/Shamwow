@@ -23,7 +23,6 @@ class Entity(pygame.sprite.Sprite):
         height = args[2]
         self.didBounceX = False
         self.didBounceY = False
-        self.speed = [self.speedx, self.speedy]
         self.move()
         self.collideWall(width, height)
         
@@ -68,6 +67,7 @@ class Entity(pygame.sprite.Sprite):
             self.image = self.images[self.frame]
                     
     def move(self):
+        self.speed = [self.speedx, self.speedy]
         self.rect = self.rect.move(self.speed)
         
     def collideWall(self, width, height):

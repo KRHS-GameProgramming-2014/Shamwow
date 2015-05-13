@@ -15,3 +15,7 @@ class Block(pygame.sprite.Sprite):
         
     def update(*args):
         self = args[0]
+
+class BgBlock(Block):
+	def __init__(self, image, pos = [0,0], blockSize=50):
+		Block.__init__(self, image, pos, blockSize)

@@ -5,6 +5,7 @@ from MainMenu import Button
 from BackGround import BackGround
 from Level import Level
 from wall import Block
+from wall import BgBlock
 from Shammy import Shammy
 pygame.init()
  
@@ -33,6 +34,7 @@ Shammy.containers = (all, shammy)
 Level.containers = (all, level)
 BackGround.containers = (all, backgrounds)
 Block.containers = (all, blocks) 
+BgBlock.containers = (all, backgrounds) 
 
 startButton = Button([width/2, height-300], 
                     "RSC/menue/startbutton.png")
@@ -63,13 +65,13 @@ while True:
         pygame.display.flip()
         clock.tick(60)
         
-    BackGround("RSC/Background Images/basichallway.png")
-    player = Player([width/2, height/2])
+    #BackGround("RSC/Background Images/basichallway.png")
+    
 
     level = Level(75, size)
     level.loadLevel("1")
-    for b in blocks.sprites():
-		print b.rect.center
+        
+    player = Player([width/2, height/2])
     """
     timer = Score([80, height - 25], "Time: ", 36)
     timerWait = 0
