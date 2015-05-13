@@ -21,7 +21,7 @@ class Player(Entity):
         self.maxWait = 60*.25
         self.image = self.images[self.frame]
         self.rect = self.image.get_rect(center = self.rect.center)
-        self.maxSpeed = 5
+        self.maxSpeed = 4
             
     def update(*args):
         self = args[0]
@@ -50,7 +50,7 @@ class Player(Entity):
         
     def animate(self):
         if self.waitCount < self.maxWait:
-            self.waitCount += 1
+            self.waitCount += 2
         else:
             self.waitCount = 0
             self.changed = True
