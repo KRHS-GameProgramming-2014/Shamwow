@@ -37,7 +37,8 @@ Block.containers = (all, blocks)
 BgBlock.containers = (all, backgrounds) 
 
 startButton = Button([width/2, height-300], 
-                    "RSC/menue/startbutton.png")
+                    "RSC/menue/startbutton.png"
+                    "RSC/menue/startpressed.jpg")
 
 run = False
 
