@@ -7,6 +7,7 @@ from Level import Level
 from wall import Block
 from wall import BgBlock
 from Shammy import Shammy
+from levelChangeBlock import LevelChangeBlock
 pygame.init()
  
 clock = pygame.time.Clock()
@@ -26,6 +27,7 @@ backgrounds = pygame.sprite.Group()
 blocks = pygame.sprite.Group()
 level = pygame.sprite.Group()
 shammy = pygame.sprite.Group()
+levelBlock = pygame.sprite.Group()
 all = pygame.sprite.OrderedUpdates()
 
 Entity.containers = (all, entities)
@@ -35,6 +37,8 @@ Level.containers = (all, level)
 BackGround.containers = (all, backgrounds)
 Block.containers = (all, blocks) 
 BgBlock.containers = (all, backgrounds) 
+LevelChangeBlock.containers = (all, backgrounds)
+
 
 startButton = Button([width/2, height-300], 
                     "RSC/menue/startbutton.png")
