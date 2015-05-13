@@ -11,7 +11,7 @@ pygame.init()
 clock = pygame.time.Clock()
 
 width = 1050
-height = 800
+height = 650
 size = width, height
 
 bgColor = r,g,b = 0, 0, 10
@@ -36,10 +36,6 @@ Block.containers = (all, blocks)
 
 startButton = Button([width/2, height-300], 
                     "RSC/menue/startbutton.png")
-
-bgImage = pygame.image.load("RSC/Background Images/basichallway.png").convert()
-bgImage = pygame.transform.scale(bgImage, size)
-bgRect = bgImage.get_rect()
 
 run = False
 

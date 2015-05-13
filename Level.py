@@ -103,7 +103,7 @@ class Level():
 					Block("RSC/Background Images/dfaesdfaesdfaesdfaesdfaesdfaesdfaesdfaesdfaesdfaes.png",
 					      [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
                           self.blockSize)
-                if c == "S":
-					Block("RSC/Enemy Images/ththing/OH.png",
-					      [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
-                          self.blockSize)
+                #if c == " ":
+                 #   self.blocks += [Block("RSC/Background Images/basichallway.png",
+                  #                  [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+                   #                 (self.blockSize,self.blockSize))]
