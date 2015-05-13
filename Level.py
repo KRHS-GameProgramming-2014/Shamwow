@@ -108,3 +108,8 @@ class Level():
                     BgBlock("RSC/Background Images/basichallway.png",
                           [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
                           self.blockSize)
+                       
+                if c == "C":
+					LevelChangeBlock("RSC/Background Images/dor.png",
+					            [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+					            self.blockSize)
