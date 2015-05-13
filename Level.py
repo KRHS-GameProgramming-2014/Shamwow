@@ -3,6 +3,7 @@ from Entity import Entity
 from levelChangeBlock import LevelChangeBlock
 from Player import Player
 from wall import Block
+from wall import BgBlock
 
 class Level():
     def __init__(self, blockSize, screenSize):
@@ -103,3 +104,12 @@ class Level():
 					Block("RSC/Background Images/dfaesdfaesdfaesdfaesdfaesdfaesdfaesdfaesdfaesdfaes.png",
 					      [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
                           self.blockSize)
+                if c == " ":
+                    BgBlock("RSC/Background Images/basichallway.png",
+                          [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+                          self.blockSize)
+                       
+                if c == "C":
+					LevelChangeBlock("RSC/Background Images/dor.png",
+					            [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+					            self.blockSize)

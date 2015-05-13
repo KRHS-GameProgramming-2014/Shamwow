@@ -5,13 +5,15 @@ from MainMenu import Button
 from BackGround import BackGround
 from Level import Level
 from wall import Block
+from wall import BgBlock
 from Shammy import Shammy
+from levelChangeBlock import LevelChangeBlock
 pygame.init()
  
 clock = pygame.time.Clock()
 
 width = 1050
-height = 600
+height = 650
 size = width, height
 
 bgColor = r,g,b = 0, 0, 10
@@ -25,6 +27,7 @@ backgrounds = pygame.sprite.Group()
 blocks = pygame.sprite.Group()
 level = pygame.sprite.Group()
 shammy = pygame.sprite.Group()
+levelBlock = pygame.sprite.Group()
 all = pygame.sprite.OrderedUpdates()
 
 Entity.containers = (all, entities)
@@ -33,13 +36,12 @@ Shammy.containers = (all, shammy)
 Level.containers = (all, level)
 BackGround.containers = (all, backgrounds)
 Block.containers = (all, blocks) 
+BgBlock.containers = (all, backgrounds) 
+LevelChangeBlock.containers = (all, backgrounds)
+
 
 startButton = Button([width/2, height-300], 
                     "RSC/menue/startbutton.png")
-
-bgImage = pygame.image.load("RSC/Background Images/basichallway.png").convert()
-bgImage = pygame.transform.scale(bgImage, size)
-bgRect = bgImage.get_rect()
 
 run = False
 
@@ -67,13 +69,13 @@ while True:
         pygame.display.flip()
         clock.tick(60)
         
-    BackGround("RSC/Background Images/basichallway.png")
-    player = Player([width/2, height/2])
+    #BackGround("RSC/Background Images/basichallway.png")
+    
 
     level = Level(75, size)
     level.loadLevel("1")
-    for b in blocks.sprites():
-		print b.rect.center
+        
+    player = Player([width/2, height/2])
     """
     timer = Score([80, height - 25], "Time: ", 36)
     timerWait = 0
