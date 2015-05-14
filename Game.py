@@ -41,8 +41,7 @@ LevelChangeBlock.containers = (all, backgrounds)
 
 
 startButton = Button([width/2, height-300], 
-                    "RSC/menue/startbutton.png",
-                    "RSC/menue/startpressed.jpg")
+                    "RSC/menue/startbutton.png")
 
 run = False
 
@@ -75,8 +74,8 @@ while True:
 
     level = Level(75, size)
     level.loadLevel("1")
-        
-    player = Player([width/2, height/2])
+
+    player = Player([width/3, height/2])
     """
     timer = Score([80, height - 25], "Time: ", 36)
     timerWait = 0
