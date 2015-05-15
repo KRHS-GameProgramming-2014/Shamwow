@@ -1,0 +1,76 @@
+#Level 1
+Level01A,Level02A
+Level01B,Level10C
+Level01C,Level10B
+
+#Level 2
+Level02A,Level01A
+Level02B,Level03A
+
+#Level 3
+Level03A,Level02B
+Level03B,Level04A
+Level03C,Level07A
+
+#Level 4
+Level04A,Level03B
+Level04B,Level05A
+
+#Level 5
+Level05A,Level04B
+Level05B,Level06A
+
+#Level 6
+Level06A,Level05B
+
+#Level 7
+Level07A,Level03C
+Level07B,Level08A
+
+#Level 8
+Level08A,Level07B
+Level08B,Level09A
+
+#Level 9
+Level09A,Level08B
+
+#Level 10
+Level10A,Level11C
+Level10B,Level01C
+Level10C,Level01B
+Level10D,Level14C
+
+#Level 11
+Level11A,Level13A
+Level11B,Level12A
+Level11C,Level10A
+
+#Level 12
+Level12A,Level11B
+
+#Level 13
+Level13A,Level11A
+Level13B,Level14C
+
+#Level 14
+Level14A,Level15B
+Level14B,Level31A
+Level14C,Level13B
+Level14D,Level10D
+Level14E,Level20D
+Level14F,Level27A
+
+#Level 15
+Level15A,Level16B
+Level15B,Level14A
+
+#Level 16
+Level16A,Level23B
+Level16B,Level15A
+Level16C,Level17A
+Level16D,!!!!!!!!!!!!!
+
+#Level 17
+Level17A,Level16C
+Level17B,LevelLevel19A
+LevelLevel17C,LevelLevel18

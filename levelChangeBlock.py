@@ -2,11 +2,10 @@ import pygame, math, sys
 from wall import Block
 
 class LevelChangeBlock(Block):
-    def __init__(self, pos, size, newlev, kind):
+    def __init__(self, pos, size, newlev):
         Block.__init__(self, "RSC/Block/LevelChangeBlock.png", pos, size)
         print newlev
         self.newlev = newlev
-        self.kind = kind
 
 
     def playerCollide(self, other):

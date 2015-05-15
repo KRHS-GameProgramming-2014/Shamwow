@@ -6,15 +6,39 @@ from wall import Block
 from wall import BgBlock
 
 class Level():
-    def __init__(self, blockSize, screenSize):
+    def __init__(self, blockSize, screenSize, linkFile = "RSC/Level/levels.link"):
         self.screenSize = screenSize
         self.blockSize = blockSize
         self.level = ""
         
-        self.levelChangeBlocks = []
-        self.Entity = []
+        self.levelLinks = self.loadLevelLink(linkFile)
+        print self.levelLinks
         
         #self.blockSize = 70
+    
+    def loadLevelLink(self, file):
+        f = open(file, 'r')
+        links = f.readlines()
+        f.close()
+        
+        newLinks = []
+        for link in links:
+            if link[0] != '#' and link [0] != '\n':
+                newLink = ""
+                for c in link:
+                    if c != '\n':
+                        newLink += c
+                newLinks += [newLink]
+        links = newLinks
+        
+        newLinks = {}
+        for link in links:
+            link = link.split(',')
+            newLinks[link[0]] = link[1]
+        links = newLinks
+        
+        return links
+        
         
     def killOldLevels(self, timeInSeconds):
         for f in os.listdir("RSC/Level"):
@@ -22,44 +46,7 @@ class Level():
                 print f, time.time() - os.path.getmtime("RSC/Level/"+f), timeInSeconds
                 if (time.time() - os.path.getmtime("RSC/Level/"+f)) > timeInSeconds:
                     print f
-                    os.remove("RSC/Level/"+f)
-            
-
-    def unload(self):
-        things = []
-        line = []
-        for y in range(14):
-            for x in range(20):
-                line += [" "]
-            things += [line]
-            line = []
-        #print len(things), len(things[0])
-        
-        for Entity in self.Entity:
-            things[Entity.rect.center[1]/50][Entity.rect.center[0]/50] = "G"
-        for lc in self.levelChangeBlocks:
-            things[lc.rect.center[1]/50][lc.rect.center[0]/50] = lc.kind
-        
-        thingString = ""
-        for line in things:
-            for c in line:
-                thingString += c
-            thingString += "\n"
-        #print thingString
-        
-        thingMap="RSC/Level/"+ self.level +".tngs"
-        savedThingfile = open(thingMap, "w")
-        savedThingfile.write(thingString)
-        savedThingfile.close()
-            
-        while len(self.blocks) > 0:
-            self.blocks.remove(self.blocks[0])
-        while len(self.hardBlocks) > 0:
-            self.hardBlocks.remove(self.hardBlocks[0])
-        while len(self.levelChangeBlocks) > 0:
-            self.levelChangeBlocks.remove(self.levelChangeBlocks[0])
-        while len(self.Entity) > 0:
-            self.Entity.remove(self.Entity[0])
+                    os.remove("RSC/Level/"+f)        
     
     def loadLevel(self, level):  
         self.level = level
@@ -101,16 +88,29 @@ class Level():
                           [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
                           self.blockSize)
                 if c == "$":
-					Block("RSC/Background Images/dfaesdfaesdfaesdfaesdfaesdfaesdfaesdfaesdfaesdfaes.png",
-					      [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+                    Block("RSC/Background Images/dfaesdfaesdfaesdfaesdfaesdfaesdfaesdfaesdfaesdfaes.png",
+                          [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
                           self.blockSize)
                 if c == " ":
                     BgBlock("RSC/Background Images/basichallway.png",
                           [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
                           self.blockSize)
                        
-              #  if c == "C":
-				#	LevelChangeBlock("RSC/Background Images/dor.png",
-				#	            [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
-				#	            self.blockSize)
-				
+                if c in "ABCEF": #Door from Bottom
+                   LevelChangeBlock("RSC/Background Images/dor.png",
+                               [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+                               self.blockSize,
+                               self.levelLinks[self.level+c])
+                
+                if c in "GHIJKL": #Door from Top
+                   LevelChangeBlock("RSC/Background Images/dor.png",
+                               [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+                               self.blockSize,
+                               self.levelLinks[self.level+c])
+                            
+                if c in "MNOPQR": #Stairs
+                   LevelChangeBlock("RSC/Background Images/dor.png",
+                               [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+                               self.blockSize,
+                               self.levelLinks[self.level+c])
+                
