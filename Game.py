@@ -17,7 +17,7 @@ width = 1050
 height = 650
 size = width, height
 
-bgColor = r,g,b = 0, 0, 10
+bgColor = r,g,b = 0, 0, 0
 
 screen = pygame.display.set_mode(size)
 
@@ -27,15 +27,15 @@ hudItems = pygame.sprite.Group()
 backgrounds = pygame.sprite.Group()
 blocks = pygame.sprite.Group()
 level = pygame.sprite.Group()
-shammy = pygame.sprite.Group()
-towelHead = pygame.sprite.Group()
+#shammy = pygame.sprite.Group()
+#towelHead = pygame.sprite.Group()
 levelBlock = pygame.sprite.Group()
 all = pygame.sprite.OrderedUpdates()
 
 Entity.containers = (all, entities)
 Player.containers = (all, players)
-ShammyTowel.containers = (all, shammy)
-towelHead = (all, towelHead)
+#ShammyTowel.containers = (all, shammy)
+#towelHead = (all, towelHead)
 Level.containers = (all, level)
 BackGround.containers = (all, backgrounds)
 Block.containers = (all, blocks) 
