@@ -2,7 +2,7 @@ import pygame, math
 from Entity import Entity
 from Player import Player
 
-class Shammy(pygame.sprite.Sprite):
+class ShammyTowel(pygame.sprite.Sprite):
 	def __init__(self, image, speed = [0,0], pos = [0,0]):
 		self.upImages = [pygame.image.load("RSC/Enemy Images/ththing/OH.png"),
  						 pygame.image.load("RSC/Enemy Images/ththing/OHNO.png"),
