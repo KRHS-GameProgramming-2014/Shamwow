@@ -49,7 +49,7 @@ class Level():
                     os.remove("RSC/Level/"+f)        
     
     def loadLevel(self, level):  
-        self.level = level
+        self.level = "Level"+level
         print self.level
         levelFile = "RSC/Level/" + "Level" + level +".lvl"
         print levelFile

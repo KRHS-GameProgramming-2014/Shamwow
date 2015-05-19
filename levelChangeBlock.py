@@ -2,8 +2,8 @@ import pygame, math, sys
 from wall import Block
 
 class LevelChangeBlock(Block):
-    def __init__(self, pos, size, newlev):
-        Block.__init__(self, "RSC/Block/LevelChangeBlock.png", pos, size)
+    def __init__(self, image, pos, size, newlev):
+        Block.__init__(self, image, pos, size)
         print newlev
         self.newlev = newlev
 
