@@ -6,7 +6,8 @@ from BackGround import BackGround
 from Level import Level
 from wall import Block
 from wall import BgBlock
-from Shammy import Shammy
+from Shammy import ShammyTowel
+from towelHead import ShamFlap
 from levelChangeBlock import LevelChangeBlock
 pygame.init()
  
@@ -16,7 +17,7 @@ width = 1050
 height = 650
 size = width, height
 
-bgColor = r,g,b = 0, 0, 10
+bgColor = r,g,b = 0, 0, 0
 
 screen = pygame.display.set_mode(size)
 
@@ -26,13 +27,15 @@ hudItems = pygame.sprite.Group()
 backgrounds = pygame.sprite.Group()
 blocks = pygame.sprite.Group()
 level = pygame.sprite.Group()
-shammy = pygame.sprite.Group()
+#shammy = pygame.sprite.Group()
+#towelHead = pygame.sprite.Group()
 levelBlock = pygame.sprite.Group()
 all = pygame.sprite.OrderedUpdates()
 
 Entity.containers = (all, entities)
 Player.containers = (all, players)
-Shammy.containers = (all, shammy)
+#ShammyTowel.containers = (all, shammy)
+#towelHead = (all, towelHead)
 Level.containers = (all, level)
 BackGround.containers = (all, backgrounds)
 Block.containers = (all, blocks) 

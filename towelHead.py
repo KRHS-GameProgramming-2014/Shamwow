@@ -2,7 +2,7 @@ import pygame, math
 from Entity import Entity
 from Player import Player
 
-class towelHead(pygame.sprite.Sprite):
+class ShamFlap(pygame.sprite.Sprite):
 	def __init__(self, image, speed = [0,0], pos = [0,0]):
 		self.upImages = [pygame.image.load("images/Player/pballru.png"),
  						 pygame.image.load("images/Player/pballgu.png"),
