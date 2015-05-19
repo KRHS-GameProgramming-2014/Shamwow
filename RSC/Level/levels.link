@@ -1,76 +1,128 @@
 #Level 1
-Level01A,Level02A
-Level01B,Level10C
-Level01C,Level10B
+Level01X,Level02N
+Level01G,Level10A
+Level01H,Level10B
 
 #Level 2
-Level02A,Level01A
-Level02B,Level03A
+Level02N,Level01X
+Level02X,Level03X
 
 #Level 3
-Level03A,Level02B
-Level03B,Level04A
-Level03C,Level07A
+Level03X,Level02X
+Level03A,Level04G
+Level03G,Level07A
 
 #Level 4
-Level04A,Level03B
-Level04B,Level05A
+Level04G,Level03A
+Level04S,Level05S
 
 #Level 5
-Level05A,Level04B
-Level05B,Level06A
+Level05S,Level04S
+Level05A,Level06G
 
 #Level 6
-Level06A,Level05B
+Level06G,Level05A
 
 #Level 7
-Level07A,Level03C
-Level07B,Level08A
+Level07A,Level03G
+Level07S,Level08S
 
 #Level 8
-Level08A,Level07B
-Level08B,Level09A
+Level08S,Level07S
+Level08G,Level09A
 
 #Level 9
-Level09A,Level08B
+Level09A,Level08G
 
 #Level 10
-Level10A,Level11C
-Level10B,Level01C
-Level10C,Level01B
-Level10D,Level14C
+Level10X,Level11X
+Level10A,Level01G
+Level10B,Level01H
+Level10Y,Level14N
 
 #Level 11
-Level11A,Level13A
-Level11B,Level12A
-Level11C,Level10A
+Level11S,Level13S
+Level11A,Level12G
+Level11X,Level10X
 
 #Level 12
-Level12A,Level11B
+Level12G,Level11A
 
 #Level 13
-Level13A,Level11A
-Level13B,Level14C
+Level13S,Level11S
+Level13M,Level14M
 
 #Level 14
-Level14A,Level15B
-Level14B,Level31A
-Level14C,Level13B
-Level14D,Level10D
-Level14E,Level20D
-Level14F,Level27A
+Level14A,Level15G
+Level14X,Level31X
+Level14M,Level13M
+Level14N,Level10Y
+Level14Y,Level20X
+Level14Z,Level27X
 
 #Level 15
-Level15A,Level16B
-Level15B,Level14A
+Level15A,Level16G
+Level15G,Level14A
 
 #Level 16
-Level16A,Level23B
-Level16B,Level15A
-Level16C,Level17A
-Level16D,!!!!!!!!!!!!!
+Level16S,Level23S
+Level16G,Level15A
+Level16M,Level17M
+Level16A,!!!!!!!!!!!!!
 
 #Level 17
-Level17A,Level16C
-Level17B,LevelLevel19A
-LevelLevel17C,LevelLevel18
+Level17M,Level16M
+Level17T,Level19S
+Level17G,Level18A
+Level17S,Level22S
+
+#Level 18
+Level18A,Level17G
+
+#Level 19
+Level19S,Level17T
+Level19G,Level20A
+
+#Level 20
+Level20T,Level19G
+Level20M,Level14Y
+Level20S,Level21A
+
+#Level 21
+Level21A,Level20G
+
+#Level 22
+Level22S,Level17S
+
+#Level 23
+Level23S,Level16S
+Level23T,Level24S
+
+#Level 24
+Level24S,Level23T
+Level24G,Level25A
+
+#Level 25
+Level25A,Level24G
+Level25S,Level26S
+Level25G,Level29A
+
+#Level 26
+Level26S,Level25S
+
+#Level 27
+Level27X,Level14Z
+Level27S,Level28S
+
+#Level 28
+Level28S,Level27S
+
+#Level 29
+Level29A,Level25G
+Level29G,Level30A
+
+#Level 30
+Level30A,Level29G
+
+#Level 31
+Level31X,Level14X

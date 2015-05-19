@@ -73,7 +73,7 @@ while True:
     
 
     level = Level(75, size)
-    level.loadLevel("1")
+    level.loadLevel("01")
 
     player = Player([width/3, height/2])
     """

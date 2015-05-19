@@ -96,19 +96,31 @@ class Level():
                           [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
                           self.blockSize)
                        
-                if c in "ABCEF": #Door from Bottom
+                if c in "ABC": #Door from Top
                    LevelChangeBlock("RSC/Background Images/dor.png",
                                [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
                                self.blockSize,
                                self.levelLinks[self.level+c])
                 
-                if c in "GHIJKL": #Door from Top
+                if c in "GHI": #Door from Bottom
                    LevelChangeBlock("RSC/Background Images/dor.png",
                                [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
                                self.blockSize,
                                self.levelLinks[self.level+c])
                             
-                if c in "MNOPQR": #Stairs
+                if c in "MNO": #Stairs
+                   LevelChangeBlock("RSC/Background Images/dor.png",
+                               [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+                               self.blockSize,
+                               self.levelLinks[self.level+c])
+                
+                if c in "STU": #Door from Side
+                   LevelChangeBlock("RSC/Background Images/dor.png",
+                               [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+                               self.blockSize,
+                               self.levelLinks[self.level+c])
+                               
+                if c in "XYZ": #Stairs from Side
                    LevelChangeBlock("RSC/Background Images/dor.png",
                                [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
                                self.blockSize,
