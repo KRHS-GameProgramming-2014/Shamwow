@@ -39,7 +39,7 @@ class Level():
         
         return links
         
-        
+    """ 
     def killOldLevels(self, timeInSeconds):
         for f in os.listdir("RSC/Level"):
             if f[-5:] == ".tngs":
@@ -47,7 +47,7 @@ class Level():
                 if (time.time() - os.path.getmtime("RSC/Level/"+f)) > timeInSeconds:
                     print f
                     os.remove("RSC/Level/"+f)        
-    
+    """
     def loadLevel(self, level):  
         self.level = "Level"+level
         print self.level
@@ -59,7 +59,7 @@ class Level():
         f.close()
         for line in lines:
             print line
-        """"
+        """
         newlines = []
         #Clean up the file by stripping newlines!
         for line in lines:
@@ -97,32 +97,37 @@ class Level():
                           self.blockSize)
                        
                 if c in "ABC": #Door from Top
-                   LevelChangeBlock("RSC/Background Images/dor.png",
+                   LevelChangeBlock("RSC/Background Images/ANOTHER DOOR.png",
                                [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
                                self.blockSize,
+                               self.level+c,
                                self.levelLinks[self.level+c])
                 
                 if c in "GHI": #Door from Bottom
                    LevelChangeBlock("RSC/Background Images/dor.png",
                                [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
                                self.blockSize,
+                               self.level+c,
                                self.levelLinks[self.level+c])
                             
                 if c in "MNO": #Stairs
-                   LevelChangeBlock("RSC/Background Images/dor.png",
+                   LevelChangeBlock("RSC/Background Images/sterans.png",
                                [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
                                self.blockSize,
+                               self.level+c,
                                self.levelLinks[self.level+c])
                 
                 if c in "STU": #Door from Side
-                   LevelChangeBlock("RSC/Background Images/dor.png",
+                   LevelChangeBlock("RSC/Background Images/dorside.png",
                                [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
                                self.blockSize,
+                               self.level+c,
                                self.levelLinks[self.level+c])
                                
                 if c in "XYZ": #Stairs from Side
-                   LevelChangeBlock("RSC/Background Images/dor.png",
+                   LevelChangeBlock("RSC/Background Images/steranside.png",
                                [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
                                self.blockSize,
+                               self.level+c,
                                self.levelLinks[self.level+c])
                 

@@ -2,9 +2,10 @@ import pygame, math, sys
 from wall import Block
 
 class LevelChangeBlock(Block):
-    def __init__(self, image, pos, size, newlev):
+    def __init__(self, image, pos, size, curlev, newlev):
         Block.__init__(self, image, pos, size)
         print newlev
+        self.curlev = curlev
         self.newlev = newlev
 
 

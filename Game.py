@@ -14,7 +14,7 @@ pygame.init()
 clock = pygame.time.Clock()
 
 width = 1050
-height = 650
+height = 670
 size = width, height
 
 bgColor = r,g,b = 0, 0, 0
@@ -26,21 +26,19 @@ players = pygame.sprite.Group()
 hudItems = pygame.sprite.Group()
 backgrounds = pygame.sprite.Group()
 blocks = pygame.sprite.Group()
-level = pygame.sprite.Group()
 #shammy = pygame.sprite.Group()
 #towelHead = pygame.sprite.Group()
-levelBlock = pygame.sprite.Group()
+levelBlocks = pygame.sprite.Group()
 all = pygame.sprite.OrderedUpdates()
 
 Entity.containers = (all, entities)
 Player.containers = (all, players)
 #ShammyTowel.containers = (all, shammy)
 #towelHead = (all, towelHead)
-Level.containers = (all, level)
 BackGround.containers = (all, backgrounds)
 Block.containers = (all, blocks) 
 BgBlock.containers = (all, backgrounds) 
-LevelChangeBlock.containers = (all, backgrounds)
+LevelChangeBlock.containers = (all, levelBlocks)
 
 
 startButton = Button([width/2, height-300], 
@@ -85,6 +83,7 @@ while True:
     timerWaitMax = 6
     score = Score([width-80, height-25], "Score: ", 36)
     """
+    enteredLevel = False
      
     while run:
         for event in pygame.event.get():
@@ -113,6 +112,26 @@ while True:
         for player in playersHitBlocks:
             for block in playersHitBlocks[player]:
                 player.collideBlock(Block)
+                
+        playersHitLevelChangeBlocks = pygame.sprite.groupcollide(players, levelBlocks, False, False)
+        if enteredLevel and playersHitLevelChangeBlocks == {}:
+            enteredLevel = False
+        
+        for player in playersHitLevelChangeBlocks:
+            for block in playersHitLevelChangeBlocks[player]:
+                if not enteredLevel:
+                    dest = block.newlev[5:]
+                    for s in all.sprites():
+                        s.kill()
+                    print dest
+                    level.loadLevel(dest[:-1])
+                    for block in levelBlocks.sprites():
+                        if block.curlev[-1] == dest[-1]:
+                            print block.curlev
+                            playerPos = block.rect.center
+                            print playerPos, ">>>>>>>>>>>>>", block.rect.center
+                    player = Player(playerPos)
+                    enteredLevel = True
     
         all.update(width, height)
 
