@@ -4,13 +4,14 @@ from levelChangeBlock import LevelChangeBlock
 from Player import Player
 from wall import Block
 from wall import BgBlock
+from Shammy import ShammyTowel
 
 class Level():
     def __init__(self, blockSize, screenSize, linkFile = "RSC/Level/levels.link"):
         self.screenSize = screenSize
         self.blockSize = blockSize
         self.level = ""
-        
+        self.shammy = []
         self.levelLinks = self.loadLevelLink(linkFile)
         print self.levelLinks
         
@@ -125,4 +126,6 @@ class Level():
                                [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
                                self.blockSize,
                                self.levelLinks[self.level+c])
-                
+                if c == "%": #ShammyTowel
+                    self.shammy += [ShammyTowel(
+                                [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)])]
