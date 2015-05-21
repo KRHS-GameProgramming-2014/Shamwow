@@ -1,5 +1,5 @@
 import pygame
-import Player from Player
+from Player import Player
 from Entity import Entity
 
 class PowerDownPotato(Entity):

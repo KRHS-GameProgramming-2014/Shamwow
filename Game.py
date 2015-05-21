@@ -33,7 +33,7 @@ all = pygame.sprite.OrderedUpdates()
 
 Entity.containers = (all, entities)
 Player.containers = (all, players)
-#ShammyTowel.containers = (all, shammy)
+ShammyTowel.containers = (all, shammy)
 #towelHead = (all, towelHead)
 BackGround.containers = (all, backgrounds)
 Block.containers = (all, blocks) 
