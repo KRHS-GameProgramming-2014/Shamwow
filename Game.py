@@ -6,7 +6,7 @@ from BackGround import BackGround
 from Level import Level
 from wall import Block
 from wall import BgBlock
-from Shammy import ShammyTowel
+#from Shammy import ShammyTowel
 from towelHead import ShamFlap
 from levelChangeBlock import LevelChangeBlock
 pygame.init()
@@ -33,7 +33,7 @@ all = pygame.sprite.OrderedUpdates()
 
 Entity.containers = (all, entities)
 Player.containers = (all, players)
-ShammyTowel.containers = (all, shammy)
+#ShammyTowel.containers = (all, shammy)
 #towelHead = (all, towelHead)
 BackGround.containers = (all, backgrounds)
 Block.containers = (all, blocks) 
