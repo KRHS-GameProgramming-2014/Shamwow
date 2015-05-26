@@ -6,7 +6,7 @@ from BackGround import BackGround
 from Level import Level
 from wall import Block
 from wall import BgBlock
-#from Shammy import ShammyTowel
+from Shammy import ShammyTowel
 from towelHead import ShamFlap
 from levelChangeBlock import LevelChangeBlock
 pygame.init()
@@ -26,14 +26,14 @@ players = pygame.sprite.Group()
 hudItems = pygame.sprite.Group()
 backgrounds = pygame.sprite.Group()
 blocks = pygame.sprite.Group()
-#shammy = pygame.sprite.Group()
+shammy = pygame.sprite.Group()
 #towelHead = pygame.sprite.Group()
 levelBlocks = pygame.sprite.Group()
 all = pygame.sprite.OrderedUpdates()
 
 Entity.containers = (all, entities)
 Player.containers = (all, players)
-#ShammyTowel.containers = (all, shammy)
+ShammyTowel.containers = (all, shammy)
 #towelHead = (all, towelHead)
 BackGround.containers = (all, backgrounds)
 Block.containers = (all, blocks) 
@@ -113,6 +113,10 @@ while True:
             for block in playersHitBlocks[player]:
                 player.collideBlock(Block)
                 
+        for shammy in shammyHitBlocks:
+            for block in playersHitBlocks[player]:
+                player.collideBlock(Block)
+                        
         playersHitLevelChangeBlocks = pygame.sprite.groupcollide(players, levelBlocks, False, False)
         if enteredLevel and playersHitLevelChangeBlocks == {}:
             enteredLevel = False
