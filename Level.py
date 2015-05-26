@@ -4,7 +4,7 @@ from levelChangeBlock import LevelChangeBlock
 from Player import Player
 from wall import Block
 from wall import BgBlock
-#from Shammy import ShammyTowel
+from Shammy import ShammyTowel
 
 class Level():
     def __init__(self, blockSize, screenSize, linkFile = "RSC/Level/levels.link"):
@@ -131,6 +131,6 @@ class Level():
                                self.blockSize,
                                self.level+c,
                                self.levelLinks[self.level+c])
-                #if c == "%": #ShammyTowel
-                    #self.shammy += [ShammyTowel(
-                                #[(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)])]
+                if c == "%": #ShammyTowel
+                    ShammyTowel("RSC/Enemy Images/ththing/OH.png",
+                                [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)])
