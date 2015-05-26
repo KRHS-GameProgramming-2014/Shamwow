@@ -57,7 +57,7 @@ Level14A,Level15G
 Level14X,Level31X
 Level14M,Level13M
 Level14N,Level10Y
-Level14Y,Level20X
+Level14Y,Level20M
 Level14Z,Level27X
 
 #Level 15
@@ -81,7 +81,7 @@ Level18A,Level17G
 
 #Level 19
 Level19S,Level17T
-Level19G,Level20A
+Level19G,Level20T
 
 #Level 20
 Level20T,Level19G
@@ -89,7 +89,7 @@ Level20M,Level14Y
 Level20S,Level21A
 
 #Level 21
-Level21A,Level20G
+Level21A,Level20S
 
 #Level 22
 Level22S,Level17S
