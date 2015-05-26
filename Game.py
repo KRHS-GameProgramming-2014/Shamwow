@@ -14,7 +14,7 @@ pygame.init()
 clock = pygame.time.Clock()
 
 width = 1050
-height = 670
+height = 675
 size = width, height
 
 bgColor = r,g,b = 0, 0, 0
@@ -74,7 +74,7 @@ while True:
     
 
     level = Level(75, size)
-    level.loadLevel("01")
+    level.loadLevel("01") 
 
     player = Player([width/3, height/2])
     """
