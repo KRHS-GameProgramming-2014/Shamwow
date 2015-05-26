@@ -9,6 +9,7 @@ from wall import BgBlock
 from Shammy import ShammyTowel
 from towelHead import ShamFlap
 from levelChangeBlock import LevelChangeBlock
+from key import Key
 pygame.init()
  
 clock = pygame.time.Clock()
