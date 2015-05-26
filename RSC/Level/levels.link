@@ -54,7 +54,7 @@ Level13M,Level14M
 
 #Level 14
 Level14A,Level15G
-Level14X,Level31X
+Level14X,Level31S
 Level14M,Level13M
 Level14N,Level10Y
 Level14Y,Level20M
@@ -125,4 +125,4 @@ Level29G,Level30A
 Level30A,Level29G
 
 #Level 31
-Level31X,Level14X
+Level31S,Level14X
