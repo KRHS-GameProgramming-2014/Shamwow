@@ -54,7 +54,7 @@ class Level():
         print self.level
         levelFile = "RSC/Level/" + "Level" + level +".lvl"
         print levelFile
-
+        monsters = {"shammy": []}
         f = open(levelFile, "r")
         lines = f.readlines()
         f.close()
@@ -132,5 +132,9 @@ class Level():
                                self.level+c,
                                self.levelLinks[self.level+c])
                 if c == "%": #ShammyTowel
-                    ShammyTowel("RSC/Enemy Images/ththing/OH.png",
-                                [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)])
+                    BgBlock("RSC/Background Images/basichallway.png",
+                          [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+                          self.blockSize)
+                    monsters["shammy"] += [[(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)]]
+        for shammy in monsters["shammy"]:
+            ShammyTowel(shammy)
