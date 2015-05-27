@@ -3,7 +3,8 @@ from Entity import Entity
 from Player import Player
 
 class ShamFlap(pygame.sprite.Sprite):
-	def __init__(self, image, speed = [0,0], pos = [0,0]):
+	def __init__(self, pos = [0,0]):
+        pygame.sprite.Sprite.__init__(self, self.containers)
 		self.upImages = [pygame.image.load("images/Player/pballru.png"),
  						 pygame.image.load("images/Player/pballgu.png"),
  						 pygame.image.load("images/Player/pballbu.png")]
@@ -16,7 +17,6 @@ class ShamFlap(pygame.sprite.Sprite):
  		self.rightImages = [pygame.image.load("images/Player/pballrr.png"),
  						    pygame.image.load("images/Player/pballgr.png"),
  						    pygame.image.load("images/Player/pballbr.png")]
-		pygame.sprite.Sprite.__init__(self, self.containers)
  		self.image = pygame.image.load(image)
  		self.rect = self.image.get_rect()
  		self.speedx = speed[0]
