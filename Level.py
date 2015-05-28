@@ -97,35 +97,53 @@ class Level():
                           [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
                           self.blockSize)
                        
-                if c in "ABC": #Door from Top
+                if c in "AB": #Door from Top
                    LevelChangeBlock("RSC/Background Images/ANOTHER DOOR.png",
                                [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
                                self.blockSize,
                                self.level+c,
                                self.levelLinks[self.level+c])
                 
-                if c in "GHI": #Door from Bottom
-                   LevelChangeBlock("RSC/Background Images/dor.png",
+                if c in "CD": #Door from Bottom
+                   LevelChangeBlock("RSC/Background Images/AH.png",
                                [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
                                self.blockSize,
                                self.level+c,
                                self.levelLinks[self.level+c])
                             
-                if c in "MNO": #Stairs
-                   LevelChangeBlock("RSC/Background Images/sterans.png",
+                if c in "EF": #Down Stairs
+                   LevelChangeBlock("RSC/Background Images/dhjnsb99.png",
                                [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
                                self.blockSize,
                                self.level+c,
                                self.levelLinks[self.level+c])
                 
-                if c in "STU": #Door from Side
-                   LevelChangeBlock("RSC/Background Images/dorside.png",
+                if c in "GH": #Door from Left Side
+                   LevelChangeBlock("RSC/Background Images/drfsejdfsennjfyu3.png",
                                [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
                                self.blockSize,
                                self.level+c,
                                self.levelLinks[self.level+c])
                                
-                if c in "XYZ": #Stairs from Side
+                if c in "IJ": #Up Stairs from Side
+                   LevelChangeBlock("RSC/Background Images/a not so stupid nam.png",
+                               [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+                               self.blockSize,
+                               self.level+c,
+                               self.levelLinks[self.level+c])
+                if c in "KL": #Door from Right Side
+                   LevelChangeBlock("RSC/Background Images/hhhhhhhhhhhhhhhhhhhhhhhhhhhhh.png",
+                               [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+                               self.blockSize,
+                               self.level+c,
+                               self.levelLinks[self.level+c])
+                if c in "MN": #Up Stairs
+                   LevelChangeBlock("RSC/Background Images/sterans.png",
+                               [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+                               self.blockSize,
+                               self.level+c,
+                               self.levelLinks[self.level+c])
+                if c in "OP": #Down Stairs from Side
                    LevelChangeBlock("RSC/Background Images/steranside.png",
                                [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
                                self.blockSize,
