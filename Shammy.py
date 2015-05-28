@@ -78,8 +78,8 @@ class ShammyTowel(pygame.sprite.Sprite):
     
     def detect(self, Player):
         if self.distToPoint(player.rect.center) < self.detectionRadius:
-            pX = player.rect.center[0]
-            pY = player.rect.center[1]
+            pX = Player.rect.center[0]
+            pY = Player.rect.center[1]
             zX = self.rect.center[0]
             zY = self.rect.center[1]
            

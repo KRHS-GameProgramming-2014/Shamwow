@@ -17,10 +17,12 @@ class ShamFlap(pygame.sprite.Sprite):
         self.rightImages = [pygame.image.load("images/Player/pballrr.png"),
                             pygame.image.load("images/Player/pballgr.png"),
                             pygame.image.load("images/Player/pballbr.png")]
-        self.image = pygame.image.load(image)
+        
+        self.images = self.upImages
+        self.image = self.images[0]
         self.rect = self.image.get_rect()
-        self.speedx = speed[0]
-        self.speedy = speed[1]
+        self.speedx = random.randint(-4,4)
+        self.speedy = random.randint(-4,4)
         self.speed = [self.speedx, self.speedy]
         self.place(pos)
         self.didBounceX = False
