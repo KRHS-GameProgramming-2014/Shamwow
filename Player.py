@@ -1,4 +1,5 @@
 import pygame
+from key import Key
 from Entity import Entity
 
 class Player(Entity):
