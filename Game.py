@@ -44,7 +44,6 @@ LevelChangeBlock.containers = (all, levelBlocks)
 
 startButton = Button([width/2, height-300], 
                     "RSC/menue/startbutton.png")
-
 run = False
 
 while True:
