@@ -4,7 +4,7 @@ from wall import Block
 class LevelChangeBlock(Block):
     def __init__(self, image, pos, size, curlev, newlev):
         Block.__init__(self, image, pos, size)
-        print newlev
+        #print newlev
         self.curlev = curlev
         self.newlev = newlev
 
@@ -14,6 +14,6 @@ class LevelChangeBlock(Block):
             and self.rect.left < other.rect.right):
             if (self.rect.bottom > other.rect.top and
                 self.rect.top < other.rect.bottom):
-                print "I'm going to ", self.newlev
+                #print "I'm going to ", self.newlev
                 return True
         return False

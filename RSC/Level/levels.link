@@ -28,11 +28,11 @@ Level07A,Level03C
 Level07K,Level08G
 
 #Level 8
-Level08G,Level07G
-Level08S,Level09A
+Level08G,Level07K
+Level08C,Level09A
 
 #Level 9
-Level09A,Level08S
+Level09A,Level08C
 
 #Level 10
 Level10I,Level11O

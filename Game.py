@@ -125,13 +125,13 @@ while True:
                     dest = block.newlev[5:]
                     for s in all.sprites():
                         s.kill()
-                    print dest
+                    #print dest
                     level.loadLevel(dest[:-1])
                     for block in levelBlocks.sprites():
                         if block.curlev[-1] == dest[-1]:
-                            print block.curlev
+                            #print block.curlev
                             playerPos = block.rect.center
-                            print playerPos, ">>>>>>>>>>>>>", block.rect.center
+                            #print playerPos, ">>>>>>>>>>>>>", block.rect.center
                     player = Player(playerPos)
                     enteredLevel = True
     
