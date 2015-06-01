@@ -157,7 +157,7 @@ class Level():
                           self.blockSize)
                 if c == "%": #ShammyTowel
                     BgBlock("RSC/deadchey.png",
-                          [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+                          [(x*self.blockSize)+(self.blockSize/1), (y*self.blockSize)+(self.blockSize/2)],
                           self.blockSize)
                                     
                     monsters["shammy"] += [[(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)]]
