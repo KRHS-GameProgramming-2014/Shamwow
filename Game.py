@@ -84,6 +84,8 @@ while True:
     score = Score([width-80, height-25], "Score: ", 36)
     """
     enteredLevel = False
+    
+    keys = []
      
     while run:
         for event in pygame.event.get():
