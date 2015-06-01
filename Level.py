@@ -153,6 +153,11 @@ class Level():
                     BgBlock("RSC/Background Images/basichallway.png",
                           [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
                           self.blockSize)
+                if c == "%": #ShammyTowel
+                    BgBlock("RSC/deadchey.png",
+                          [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+                          self.blockSize)
+                                    
                     monsters["shammy"] += [[(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)]]
         for shammy in monsters["shammy"]:
             ShammyTowel(shammy)
