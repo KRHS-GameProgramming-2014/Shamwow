@@ -1,0 +1,107 @@
+#Level 1
+Key08c, Level01C and Level01D?????????
+
+#Level 3
+Key03a,Level03A
+
+#Level 6
+Level06b,Level07A
+
+#Level 8
+
+
+#Level 9
+Level09A,Level08C
+
+#Level 10
+Level10I,Level11O
+Level10A,Level01C
+Level10B,Level01D
+Level10J,Level14N
+
+#Level 11
+Level11G,Level13K
+Level11A,Level12C
+Level11O,Level10I
+
+#Level 12
+Level12C,Level11A
+
+#Level 13
+Level13K,Level11G
+Level13E,Level14M
+
+#Level 14
+Level14A,Level15C
+Level14O,Level31I
+Level14M,Level13E
+Level14N,Level10J
+Level14I,Level20E
+Level14P,Level27O
+
+#Level 15
+Level15A,Level16C
+Level15C,Level14A
+
+#Level 16
+Level16K,Level23G
+Level16C,Level15A
+Level16I,Level17E
+Level16A,!!!!!!!!!!!!!
+
+#Level 17
+Level17E,Level16I
+Level17K,Level19G
+Level17C,Level18A
+Level17G,Level22K
+
+#Level 18
+Level18A,Level17C
+
+#Level 19
+Level19G,Level17K
+Level19C,Level20K
+
+#Level 20
+Level20K,Level19C
+Level20E,Level14I
+Level20G,Level21A
+
+#Level 21
+Level21A,Level20G
+
+#Level 22
+Level22K,Level17G
+
+#Level 23
+Level23G,Level16K
+Level23K,Level24G
+
+#Level 24
+Level24G,Level23K
+Level24C,Level25A
+
+#Level 25
+Level25A,Level24C
+Level25G,Level26K
+Level25C,Level29A
+
+#Level 26
+Level26K,Level25G
+
+#Level 27
+Level27O,Level14P
+Level27K,Level28G
+
+#Level 28
+Level28G,Level27K
+
+#Level 29
+Level29A,Level25C
+Level29C,Level30A
+
+#Level 30
+Level30A,Level29C
+
+#Level 31
+Level31I,Level14O

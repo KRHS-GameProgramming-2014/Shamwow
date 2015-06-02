@@ -17,3 +17,8 @@ class LevelChangeBlock(Block):
                 #print "I'm going to ", self.newlev
                 return True
         return False
+
+class LockedLevelChangeBlock(LevelChangeBlock):
+    def __init__(self, image, pos, size, curlev, newlev, locked = True):
+        LevelChangeBlock.__init__(self, image, pos, size, curlev, newlev)
+        self.locked = locked

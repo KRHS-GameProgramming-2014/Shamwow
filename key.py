@@ -1,7 +1,7 @@
 import pygame, math, sys
 
 class Key():
-    def __init__(self, image, pos, size):
+    def __init__(self, pos, size, dest):
         self.baseImage = pygame.image.load(image)
         if size != None:
             self.resize(size)
@@ -9,7 +9,7 @@ class Key():
             self.image = self.baseImage
         self.rect = self.imag.get_rect()
         self.place(pos)
-        levelFile = "RSC/Props/Key Images/" + letter + "key" + ".png"
+        levelFile = dest
         self.living = True
         
     def place(self, pos):

@@ -7,17 +7,18 @@ from wall import BgBlock
 from Shammy import ShammyTowel
 
 class Level():
-    def __init__(self, blockSize, screenSize, linkFile = "RSC/Level/levels.link"):
+    def __init__(self, blockSize, screenSize, levelLinkFile = "RSC/Level/levels.link", keyLinkFile = "RSC/Level/keys.link"):
         self.screenSize = screenSize
         self.blockSize = blockSize
         self.level = ""
         self.shammy = []
-        self.levelLinks = self.loadLevelLink(linkFile)
+        self.levelLinks = self.loadLinks(levelLinkFile)
+        self.keyLinks = self.loadLinks(keyLinkFile)
         #print self.levelLinks
         
         #self.blockSize = 70
     
-    def loadLevelLink(self, file):
+    def loadLinks(self, file):
         f = open(file, 'r')
         links = f.readlines()
         f.close()
