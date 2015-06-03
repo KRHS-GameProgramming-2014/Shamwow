@@ -123,13 +123,14 @@ while True:
         
         for player in playersHitLevelChangeBlocks:
             for block in playersHitLevelChangeBlocks[player]:
+                if not block.locked:
                 if not enteredLevel:
                     dest = block.newlev[5:]
                     for s in all.sprites():
                         s.kill()
                     #print dest
                     level.loadLevel(dest[:-1])
-                    for block in levelBlocks.sprites():
+                    for block in levelBlocks.sprites():goop
                         if block.curlev[-1] == dest[-1]:
                             #print block.curlev
                             playerPos = block.rect.center
