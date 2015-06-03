@@ -27,6 +27,10 @@ class ShammyTowel(pygame.sprite.Sprite):
         self.place(pos)
         self.didBounceX = False
         self.didBounceY = False
+        self.frame = 0
+        self.maxFrame = len(self.images) - 1
+        self.waitCount = 0
+        self.maxWait = 60*.25
         self.radius = (int(self.rect.height/2.0 + self.rect.width/2.0)/2) - 1
         self.living = True
         
@@ -42,6 +46,7 @@ class ShammyTowel(pygame.sprite.Sprite):
         self.speed = [self.speedx, self.speedy]
         self.move()
         self.collideWall(width, height)
+        self.animate()
         
     def move(self):
         self.rect = self.rect.move(self.speed)
@@ -63,9 +68,23 @@ class ShammyTowel(pygame.sprite.Sprite):
         self.speedx = -self.speedx
         self.speedy = -self.speedy
         self.move()
-        self.speedx = 0
-        self.speedy = 0
-        
+        self.didBounceX = False
+        self.didBounceY = False
+        #print "wall hitting"
+        self.collideBlock = True
+       
+    
+    def animate(self):
+        if self.waitCount < self.maxWait:
+            self.waitCount += 2
+        else:
+            self.waitCount = 0
+            self.changed = True
+            if self.frame < self.maxFrame:
+                self.frame += 1
+            else:
+                self.frame = 0
+                    
     def collidePlayer(self, other):
         if self != other:
             if (self.radius + other.radius) > self.distance(other.rect.center):
