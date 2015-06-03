@@ -2,11 +2,12 @@ import pygame, math, sys
 from wall import Block
 
 class LevelChangeBlock(Block):
-    def __init__(self, image, pos, size, curlev, newlev):
+    def __init__(self, image, pos, size, curlev, newlev, locked = False):
         Block.__init__(self, image, pos, size)
         #print newlev
         self.curlev = curlev
         self.newlev = newlev
+        self.locked = locked 
 
 
     def playerCollide(self, other):
@@ -17,8 +18,3 @@ class LevelChangeBlock(Block):
                 #print "I'm going to ", self.newlev
                 return True
         return False
-
-class LockedLevelChangeBlock(LevelChangeBlock):
-    def __init__(self, image, pos, size, curlev, newlev, locked = True):
-        LevelChangeBlock.__init__(self, image, pos, size, curlev, newlev)
-        self.locked = locked

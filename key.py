@@ -9,7 +9,7 @@ class Key():
             self.image = self.baseImage
         self.rect = self.imag.get_rect()
         self.place(pos)
-        levelFile = dest
+        destinations = dest.split()
         self.living = True
         
     def place(self, pos):
