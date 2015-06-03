@@ -110,12 +110,14 @@ while True:
                     player.go("stop left")
                     
         playersHitBlocks = pygame.sprite.groupcollide(players, blocks, False, False)
+        #shammysHitBlocks = pygame.sprite.groupcollide(shammys, blocks, False, False)
         
         for player in playersHitBlocks:
             for block in playersHitBlocks[player]:
                 player.collideBlock(Block)
-        
-        
+        #for shammys in shammysHitBlocks:
+            #for block in shammyHitBlocks[shammy]:
+                #shammy.collideBlock(Block)
                         
         playersHitLevelChangeBlocks = pygame.sprite.groupcollide(players, levelBlocks, False, False)
         if enteredLevel and playersHitLevelChangeBlocks == {}:
