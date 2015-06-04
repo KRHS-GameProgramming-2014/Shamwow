@@ -110,33 +110,34 @@ while True:
                     player.go("stop left")
                     
         playersHitBlocks = pygame.sprite.groupcollide(players, blocks, False, False)
-        #shammysHitBlocks = pygame.sprite.groupcollide(shammys, blocks, False, False)
+        shammysHitBlocks = pygame.sprite.groupcollide(shammys, blocks, False, False)
         
         for player in playersHitBlocks:
             for block in playersHitBlocks[player]:
                 player.collideBlock(Block)
-        #for shammys in shammysHitBlocks:
-            #for block in shammyHitBlocks[shammy]:
-                #shammy.collideBlock(Block)
+        
+        for shammy in shammysHitBlocks:
+            for block in shammysHitBlocks[shammy]:
+                shammy.collideBlock(Block)
                         
         playersHitLevelChangeBlocks = pygame.sprite.groupcollide(players, levelBlocks, False, False)
         if enteredLevel and playersHitLevelChangeBlocks == {}:
             enteredLevel = False
-        
+                
         for player in playersHitLevelChangeBlocks:
             for block in playersHitLevelChangeBlocks[player]:
                 if not block.locked:
-                if not enteredLevel:
-                    dest = block.newlev[5:]
-                    for s in all.sprites():
-                        s.kill()
+                    if not enteredLevel:
+                        dest = block.newlev[5:]
+                        for s in all.sprites():
+                            s.kill()
                     #print dest
-                    level.loadLevel(dest[:-1])
+                        level.loadLevel(dest[:-1])
                     for block in levelBlocks.sprites():goop
-                        if block.curlev[-1] == dest[-1]:
-                            #print block.curlev
-                            playerPos = block.rect.center
-                            #print playerPos, ">>>>>>>>>>>>>", block.rect.center
+                if block.curlev[-1] == dest[-1]:
+                    #print block.curlev
+                    playerPos = block.rect.center
+                    #print playerPos, ">>>>>>>>>>>>>", block.rect.center
                     player = Player(playerPos)
                     enteredLevel = True
     

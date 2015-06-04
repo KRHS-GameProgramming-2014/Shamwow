@@ -152,7 +152,7 @@ class Level():
                                self.level+c,
                                self.levelLinks[self.level+c])
                 if c == "/": #dead Cheyenne
-                    Block("RSC/deadchey.png",
+                    BgBlock("RSC/deadchey.png",
                           [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
                           self.blockSize)               
                 if c == "%": #shammytowelblock
