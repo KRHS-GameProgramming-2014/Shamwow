@@ -42,26 +42,28 @@ BgBlock.containers = (all, backgrounds)
 LevelChangeBlock.containers = (all, levelBlocks)
 
 
-startButton = Button([width/2, height-300], 
-                    "RSC/menue/startbutton.png")
-run = False
+
+run = "start"
 
 while True:
     bgImage = pygame.image.load("RSC/Background Images/mainmenuthing.png").convert()
     bgImage = pygame.transform.scale(bgImage, size)
     bgRect = bgImage.get_rect()
     
-    while not run:
+    startButton = Button([width/2, height-300], 
+                    "RSC/menue/startbutton.png")
+    
+    while run == "start":
         for event in pygame.event.get():
             if event.type == pygame.QUIT: sys.exit()
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_RETURN:
-                    run = True
+                    run = "game"
             if event.type == pygame.MOUSEBUTTONDOWN:
                 startButton.click(event.pos)
             if event.type == pygame.MOUSEBUTTONUP:
                 if startButton.release(event.pos):
-                    run = True
+                    run = "game"
                 
         bgColor = r,g,b
         screen.fill(bgColor)
@@ -86,8 +88,7 @@ while True:
     enteredLevel = False
     
     keys = []
-     
-    while run:
+    while run == "game" and player.living:
         for event in pygame.event.get():
             if event.type == pygame.QUIT: sys.exit()
             if event.type == pygame.KEYDOWN:
@@ -110,20 +111,13 @@ while True:
                     player.go("stop left")
                     
         playersHitBlocks = pygame.sprite.groupcollide(players, blocks, False, False)
-        shammysHitBlocks = pygame.sprite.groupcollide(shammys, blocks, False, False)
-        
-        for player in playersHitBlocks:
-            for block in playersHitBlocks[player]:
+        for p in playersHitBlocks:
+            for block in playersHitBlocks[p]:
                 player.collideBlock(Block)
-        
-        for shammy in shammysHitBlocks:
-            for block in shammysHitBlocks[shammy]:
-                shammy.collideBlock(Block)
-                        
+                
         playersHitLevelChangeBlocks = pygame.sprite.groupcollide(players, levelBlocks, False, False)
         if enteredLevel and playersHitLevelChangeBlocks == {}:
             enteredLevel = False
-                
         for player in playersHitLevelChangeBlocks:
             for block in playersHitLevelChangeBlocks[player]:
                 if not block.locked:
@@ -140,10 +134,24 @@ while True:
                     #print playerPos, ">>>>>>>>>>>>>", block.rect.center
                     player = Player(playerPos)
                     enteredLevel = True
-    
+            
+        #shammysHitBlocks = pygame.sprite.groupcollide(shammys, blocks, False, False)
+        #for shammy in shammysHitBlocks:
+            #for block in shammysHitBlocks[shammy]:
+                #shammy.collideBlock(Block)
+        
+        shammysHitPlayer = pygame.sprite.groupcollide(shammys, players, False, False)
+        for shammy in shammysHitPlayer:
+            for players in shammysHitPlayer[shammy]:
+                player.collideShammy(shammy)
+                        
         all.update(width, height)
 
         dirty = all.draw(screen)
         pygame.display.update(dirty)
         pygame.display.flip()
         clock.tick(60)
+    print "dead"
+    for s in all.sprites():
+        s.kill()
+    run = "start"

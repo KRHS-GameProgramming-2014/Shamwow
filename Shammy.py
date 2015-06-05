@@ -83,16 +83,6 @@ class ShammyTowel(pygame.sprite.Sprite):
                 self.frame += 1
             else:
                 self.frame = 0
-                    
-    def collidePlayer(self, other):
-        if self != other:
-            if (self.radius + other.radius) > self.distance(other.rect.center):
-                if not self.didBounceX:
-                    self.speedx = -self.speedx
-                    self.didBouncex = True
-            if not self.didBounceY:
-                    self.speedy = -self.speedy
-                    self.didBounceY = True
     
     def detect(self, Player):
         if self.distToPoint(player.rect.center) < self.detectionRadius:

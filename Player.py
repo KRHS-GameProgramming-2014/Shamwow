@@ -23,6 +23,7 @@ class Player(Entity):
         self.image = self.images[self.frame]
         self.rect = self.image.get_rect(center = self.rect.center)
         self.maxSpeed = 4
+        self.living = True
             
     def update(*args):
         self = args[0]
@@ -48,6 +49,9 @@ class Player(Entity):
         self.move()
         self.speedx = 0
         self.speedy = 0
+        
+    def collideShammy(self, shammy):
+        self.living = False
         
     def animate(self):
         if self.waitCount < self.maxWait:
