@@ -129,12 +129,13 @@ while True:
                             s.kill()
                     #print dest
                         level.loadLevel(dest[:-1])
-                if block.curlev[-1] == dest[-1]:
-                    #print block.curlev
-                    playerPos = block.rect.center
-                    #print playerPos, ">>>>>>>>>>>>>", block.rect.center
-                    player = Player(playerPos)
-                    enteredLevel = True
+                        for block in levelBlocks.sprites():
+                            if block.curlev[-1] == dest[-1]:
+                                #print block.curlev
+                                playerPos = block.rect.center
+                                #print playerPos, ">>>>>>>>>>>>>", block.rect.center
+                                player = Player(playerPos)
+                                enteredLevel = True
                     
         keysHitPlayer = pygame.sprite.groupcollide(keys, players, True, False)
         for key in keysHitPlayer:
