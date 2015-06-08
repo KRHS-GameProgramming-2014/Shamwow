@@ -5,6 +5,7 @@ from Player import Player
 from wall import Block
 from wall import BgBlock
 from Shammy import ShammyTowel
+from key import Key
 
 class Level():
     def __init__(self, blockSize, screenSize, levelLinkFile = "RSC/Level/levels.link", keyLinkFile = "RSC/Level/keys.link"):
@@ -152,6 +153,9 @@ class Level():
                                self.level+c,
                                self.levelLinks[self.level+c])
                 if c == "/": #dead Cheyenne
+                    BgBlock("RSC/Background Images/basichallway.png",
+                          [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+                          self.blockSize)
                     BgBlock("RSC/deadchey.png",
                           [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
                           self.blockSize)               
@@ -159,11 +163,15 @@ class Level():
                     BgBlock("RSC/Background Images/basichallway.png",
                           [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
                           self.blockSize)
-                if c == "abcdefghijklmno": #KEYS
+                    monsters["shammy"] += [[(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)]]
+                if c in "abcdefghijklmno": #KEYS
+                    print "KEY!!!!!!!!!!!!!!!!!!!!!!!!"
+                    BgBlock("RSC/Background Images/basichallway.png",
+                          [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+                          self.blockSize)
                     Key("RSC/Props/Key Images/okey.png",
                        [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
                         self.blockSize,
-                        self.dest)
-                    monsters["shammy"] += [[(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)]]
+                        self.keyLinks["Key"+self.level[-2:]+c])
         for shammy in monsters["shammy"]:
             ShammyTowel(shammy)

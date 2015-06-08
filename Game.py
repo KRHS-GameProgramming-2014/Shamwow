@@ -27,6 +27,7 @@ players = pygame.sprite.Group()
 hudItems = pygame.sprite.Group()
 backgrounds = pygame.sprite.Group()
 blocks = pygame.sprite.Group()
+keys = pygame.sprite.Group()
 shammys = pygame.sprite.Group()
 #towelHeads = pygame.sprite.Group()
 levelBlocks = pygame.sprite.Group()
@@ -39,6 +40,7 @@ ShammyTowel.containers = (all, shammys)
 BackGround.containers = (all, backgrounds)
 Block.containers = (all, blocks) 
 BgBlock.containers = (all, backgrounds) 
+Key.containers = (all, keys) 
 LevelChangeBlock.containers = (all, levelBlocks)
 
 
@@ -87,7 +89,7 @@ while True:
     """
     enteredLevel = False
     
-    keys = []
+    keylist = []
     while run == "game" and player.living:
         for event in pygame.event.get():
             if event.type == pygame.QUIT: sys.exit()
@@ -127,7 +129,6 @@ while True:
                             s.kill()
                     #print dest
                         level.loadLevel(dest[:-1])
-                    for block in levelBlocks.sprites():goop
                 if block.curlev[-1] == dest[-1]:
                     #print block.curlev
                     playerPos = block.rect.center
@@ -135,11 +136,12 @@ while True:
                     player = Player(playerPos)
                     enteredLevel = True
                     
-        keysHitPlayer = pygame.sprite.groupcollide(keys, players, False, False)
+        keysHitPlayer = pygame.sprite.groupcollide(keys, players, True, False)
         for key in keysHitPlayer:
-            for players in keysHitPlayer[keys]:
-                keys.playerCollide(key)
-            
+            for player in keysHitPlayer[key]:
+                print ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+                keylist += key.destinations  
+                print keylist          
         #shammysHitBlocks = pygame.sprite.groupcollide(shammys, blocks, False, False)
         #for shammy in shammysHitBlocks:
             #for block in shammysHitBlocks[shammy]:
