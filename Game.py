@@ -122,7 +122,7 @@ while True:
             enteredLevel = False
         for player in playersHitLevelChangeBlocks:
             for block in playersHitLevelChangeBlocks[player]:
-                if not block.locked:
+                if not block.locked or block.curlev in keylist:
                     if not enteredLevel:
                         dest = block.newlev[5:]
                         for s in all.sprites():

@@ -15,7 +15,11 @@ class Level():
         self.shammy = []
         self.levelLinks = self.loadLinks(levelLinkFile)
         self.keyLinks = self.loadLinks(keyLinkFile)
-        #print self.levelLinks
+        self.lockedDoors = []
+        for v in self.keyLinks.values():
+            self.lockedDoors += v.split()
+        #print self.lockedDoors
+        print self.levelLinks
         
         #self.blockSize = 70
     
@@ -78,6 +82,12 @@ class Level():
         
         for y, line in enumerate(lines):
             for x, c in enumerate(line):
+                #print level+c
+                if "Level"+level+c in self.lockedDoors:
+                    locked = True
+                    print level+c, "is locked"
+                else:
+                    locked = False
                 if c == "#":
                     #print "block", x, y
                     Block("RSC/Props/PLENT.png", 
@@ -101,21 +111,23 @@ class Level():
                           self.blockSize)
                        
                 if c in "AB": #Door from Top
-                   LevelChangeBlock("RSC/Background Images/ANOTHER DOOR.png",
+                    LevelChangeBlock("RSC/Background Images/ANOTHER DOOR.png",
                                [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
                                self.blockSize,
                                self.level+c,
-                               self.levelLinks[self.level+c])
+                               self.levelLinks[self.level+c],
+                               locked)
                 
                 if c in "CD": #Door from Bottom
-                   LevelChangeBlock("RSC/Background Images/AH.png",
+                    LevelChangeBlock("RSC/Background Images/AH.png",
                                [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
                                self.blockSize,
                                self.level+c,
-                               self.levelLinks[self.level+c])
+                               self.levelLinks[self.level+c],
+                               locked)
                             
                 if c in "EF": #Down Stairs
-                   LevelChangeBlock("RSC/Background Images/dhjnsb99.png",
+                    LevelChangeBlock("RSC/Background Images/dhjnsb99.png",
                                [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
                                self.blockSize,
                                self.level+c,
