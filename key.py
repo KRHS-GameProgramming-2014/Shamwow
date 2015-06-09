@@ -7,4 +7,4 @@ class Key(pygame.sprite.Sprite):
         self.image = pygame.image.load(image)
         self.rect = self.image.get_rect(center = pos)
         self.destinations = dest.split()
-        print self.rect.center, self.destinations
+        #print self.rect.center, self.destinations

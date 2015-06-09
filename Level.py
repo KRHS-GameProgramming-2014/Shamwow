@@ -19,7 +19,7 @@ class Level():
         for v in self.keyLinks.values():
             self.lockedDoors += v.split()
         #print self.lockedDoors
-        print self.levelLinks
+        #print self.levelLinks
         
         #self.blockSize = 70
     
@@ -85,7 +85,7 @@ class Level():
                 #print level+c
                 if "Level"+level+c in self.lockedDoors:
                     locked = True
-                    print level+c, "is locked"
+                    #print level+c, "is locked"
                 else:
                     locked = False
                 if c == "#":
@@ -131,39 +131,45 @@ class Level():
                                [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
                                self.blockSize,
                                self.level+c,
-                               self.levelLinks[self.level+c])
+                               self.levelLinks[self.level+c],
+                               locked)
                 
                 if c in "GH": #Door from Left Side
                    LevelChangeBlock("RSC/Background Images/drfsejdfsennjfyu3.png",
                                [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
                                self.blockSize,
                                self.level+c,
-                               self.levelLinks[self.level+c])
+                               self.levelLinks[self.level+c],
+                               locked)
                                
                 if c in "IJ": #Up Stairs from Side
                    LevelChangeBlock("RSC/Background Images/a not so stupid nam.png",
                                [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
                                self.blockSize,
                                self.level+c,
-                               self.levelLinks[self.level+c])
+                               self.levelLinks[self.level+c],
+                               locked)
                 if c in "KL": #Door from Right Side
                    LevelChangeBlock("RSC/Background Images/hhhhhhhhhhhhhhhhhhhhhhhhhhhhh.png",
                                [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
                                self.blockSize,
                                self.level+c,
-                               self.levelLinks[self.level+c])
+                               self.levelLinks[self.level+c],
+                               locked)
                 if c in "MN": #Up Stairs
                    LevelChangeBlock("RSC/Background Images/sterans.png",
                                [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
                                self.blockSize,
                                self.level+c,
-                               self.levelLinks[self.level+c])
+                               self.levelLinks[self.level+c],
+                               locked)
                 if c in "OP": #Down Stairs from Side
                    LevelChangeBlock("RSC/Background Images/steranside.png",
                                [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
                                self.blockSize,
                                self.level+c,
-                               self.levelLinks[self.level+c])
+                               self.levelLinks[self.level+c],
+                               locked)
                 if c == "/": #dead Cheyenne
                     BgBlock("RSC/Background Images/basichallway.png",
                           [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
@@ -177,7 +183,7 @@ class Level():
                           self.blockSize)
                     monsters["shammy"] += [[(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)]]
                 if c in "abcdefghijklmno": #KEYS
-                    print "KEY!!!!!!!!!!!!!!!!!!!!!!!!"
+                    #print "KEY!!!!!!!!!!!!!!!!!!!!!!!!"
                     BgBlock("RSC/Background Images/basichallway.png",
                           [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
                           self.blockSize)

@@ -136,13 +136,15 @@ while True:
                                 #print playerPos, ">>>>>>>>>>>>>", block.rect.center
                                 player = Player(playerPos)
                                 enteredLevel = True
+                else:
+                            player.collideBlock(Block)
                     
         keysHitPlayer = pygame.sprite.groupcollide(keys, players, True, False)
         for key in keysHitPlayer:
             for player in keysHitPlayer[key]:
-                print ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+                #print ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
                 keylist += key.destinations  
-                print keylist          
+                #print keylist          
         #shammysHitBlocks = pygame.sprite.groupcollide(shammys, blocks, False, False)
         #for shammy in shammysHitBlocks:
             #for block in shammysHitBlocks[shammy]:
