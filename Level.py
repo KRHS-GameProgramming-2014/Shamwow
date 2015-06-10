@@ -88,9 +88,11 @@ class Level():
                     #print level+c, "is locked"
                 else:
                     locked = False
-                if c == "#":
-                    #print "block", x, y
-                    Block("RSC/Props/PLENT.png", 
+                if c == "#": #Plant
+                    BgBlock("RSC/Background Images/basichallway.png",
+                          [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+                          self.blockSize)
+                    BgBlock("RSC/Props/PLENT.png",
                           [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
                           self.blockSize)
                 if c == "@":
@@ -191,5 +193,103 @@ class Level():
                        [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
                         self.blockSize,
                         self.keyLinks["Key"+self.level[-2:]+c])
+                if c == "`": #Bed
+                    BgBlock("RSC/Background Images/basichallway.png",
+                          [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+                          self.blockSize)
+                    Block("RSC/Props/bed.png",
+                          [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+                          self.blockSize)
+                if c == "~": #Robot
+                    BgBlock("RSC/Background Images/basichallway.png",
+                          [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+                          self.blockSize)
+                    Block("RSC/Props/benedict.png",
+                          [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+                          self.blockSize)
+                if c == "^": #Bathtub
+                    BgBlock("RSC/Background Images/basichallway.png",
+                          [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+                          self.blockSize)
+                    Block("RSC/Props/beth.png",
+                          [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+                          self.blockSize)
+                if c == "&": #Carpet
+                    BgBlock("RSC/Background Images/basichallway.png",
+                          [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+                          self.blockSize)
+                    BgBlock("RSC/Props/bloody triangle.png",
+                          [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+                          self.blockSize)
+                if c == "*": #Chair
+                    BgBlock("RSC/Background Images/basichallway.png",
+                          [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+                          self.blockSize)
+                    BgBlock("RSC/Props/chair.png",
+                          [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+                          self.blockSize)
+                if c == "(": #Fridge
+                    BgBlock("RSC/Background Images/basichallway.png",
+                          [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+                          self.blockSize)
+                    Block("RSC/Props/frigersat.png",
+                          [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+                          self.blockSize)
+                if c == ")": #Counter
+                    BgBlock("RSC/Background Images/basichallway.png",
+                          [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+                          self.blockSize)
+                    Block("RSC/Props/ketchnicounter.png",
+                          [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+                          self.blockSize)
+                if c == "-": #Giraffe
+                    BgBlock("RSC/Background Images/basichallway.png",
+                          [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+                          self.blockSize)
+                    BgBlock("RSC/Props/rutherford.png",
+                          [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+                          self.blockSize)
+                if c == "_": #Shelf
+                    BgBlock("RSC/Background Images/basichallway.png",
+                          [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+                          self.blockSize)
+                    Block("RSC/Props/shelf.png",
+                          [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+                          self.blockSize)
+                if c == "+": #Sofa
+                    BgBlock("RSC/Background Images/basichallway.png",
+                          [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+                          self.blockSize)
+                    BgBlock("RSC/Props/sofa.png",
+                          [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+                          self.blockSize)
+                if c == "=": #Table
+                    BgBlock("RSC/Background Images/basichallway.png",
+                          [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+                          self.blockSize)
+                    Block("RSC/Props/table.png",
+                          [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+                          self.blockSize)
+                if c == "[": #Toilet
+                    BgBlock("RSC/Background Images/basichallway.png",
+                          [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+                          self.blockSize)
+                    Block("RSC/Props/toi lit.png",
+                          [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+                          self.blockSize)
+                if c == "]": #Dead Zoe
+                    BgBlock("RSC/Background Images/basichallway.png",
+                          [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+                          self.blockSize)
+                    BgBlock("RSC/deadzoe.png",
+                          [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+                          self.blockSize)
+                if c == "{": #Dead Ellie
+                    BgBlock("RSC/Background Images/basichallway.png",
+                          [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+                          self.blockSize)
+                    BgBlock("RSC/deadellie.png",
+                          [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+                          self.blockSize)
         for shammy in monsters["shammy"]:
             ShammyTowel(shammy)
