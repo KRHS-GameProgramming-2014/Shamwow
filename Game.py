@@ -154,6 +154,10 @@ while True:
         for shammy in shammysHitPlayer:
             for players in shammysHitPlayer[shammy]:
                 player.collideShammy(shammy)
+        #shammysHitBlock = pygame.sprite.groupcollide(shammys, blocks, False, False)
+        #for shammy in shammysHitBlock:
+            #for blocks in shammysHitBlock[shammy]:
+                #shammy.collideBlock(shammy)
                         
         all.update(width, height)
 

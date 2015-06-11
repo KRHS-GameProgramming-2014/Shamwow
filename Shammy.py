@@ -68,9 +68,8 @@ class ShammyTowel(pygame.sprite.Sprite):
         self.speedx = -self.speedx
         self.speedy = -self.speedy
         self.move()
-        
-        #print "wall hitting"
-        self.collideBlock = True
+        self.speedx = 0
+        self.speedy = 0
        
     
     def animate(self):
