@@ -64,13 +64,9 @@ class ShammyTowel(pygame.sprite.Sprite):
                 self.didBounceY = True
                 #print "hit xWall"
     
-    def collideBlock(self,block):
+    def collideBlock(self, block):
         self.speedx = -self.speedx
         self.speedy = -self.speedy
-        self.move()
-        self.speedx = 0
-        self.speedy = 0
-       
     
     def animate(self):
         if self.waitCount < self.maxWait:
