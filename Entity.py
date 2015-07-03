@@ -28,14 +28,14 @@ class Entity(pygame.sprite.Sprite):
         
     def animate(self):
         if self.waitCount < self.maxWait:
-            self.waitCount += 1
+            self.waitCount += 2
         else:
             self.waitCount = 0
             self.changed = True
-        if self.frame < self.maxFrame:
-            self.frame += 1
-        else:
-            self.frame = 0
+            if self.frame < self.maxFrame:
+                self.frame += 1
+            else:
+                self.frame = 0
 
         if self.changed:    
             if self.facing == "up":

@@ -6,31 +6,21 @@ class ShammyTowel(pygame.sprite.Sprite):
     def __init__(self, pos = [0,0]):
         pygame.sprite.Sprite.__init__(self, self.containers)
         self.upImages = [pygame.image.load("RSC/Enemy Images/ththing/OH.png"),
-                         pygame.image.load("RSC/Enemy Images/ththing/OHNO.png"),
-                         pygame.image.load("RSC/Enemy Images/ththing/OH.png")]
-        self.downImages = [pygame.image.load("RSC/Enemy Images/ththing/OHNO.png"),
-                           pygame.image.load("RSC/Enemy Images/ththing/OH.png"),
-                           pygame.image.load("RSC/Enemy Images/ththing/OHNO.png")]
-        self.leftImages = [pygame.image.load("RSC/Enemy Images/ththing/OH.png"),
-                           pygame.image.load("RSC/Enemy Images/ththing/OHNO.png"),
-                           pygame.image.load("RSC/Enemy Images/ththing/OH.png")]
-        self.rightImages = [pygame.image.load("RSC/Enemy Images/ththing/OHNO.png"),
-                            pygame.image.load("RSC/Enemy Images/ththing/OH.png"),
-                            pygame.image.load("RSC/Enemy Images/ththing/OHNO.png")]
-        
+                         pygame.image.load("RSC/Enemy Images/ththing/OHNO.png")]
+        self.changed = False
         self.images = self.upImages
-        self.image = self.images[0]
-        self.rect = self.image.get_rect()
         self.speedx = random.randint(-4,4)
         self.speedy = random.randint(-4,4)
         self.speed = [self.speedx, self.speedy]
-        self.place(pos)
         self.didBounceX = False
         self.didBounceY = False
         self.frame = 0
         self.maxFrame = len(self.images) - 1
         self.waitCount = 0
         self.maxWait = 60*.25
+        self.image = self.images[self.frame]
+        self.rect = self.image.get_rect()
+        self.place(pos)
         self.radius = (int(self.rect.height/2.0 + self.rect.width/2.0)/2) - 1
         self.living = True
         
@@ -47,6 +37,7 @@ class ShammyTowel(pygame.sprite.Sprite):
         self.move()
         self.collideWall(width, height)
         self.animate()
+        self.changed = False
         
     def move(self):
         self.rect = self.rect.move(self.speed)
@@ -65,8 +56,8 @@ class ShammyTowel(pygame.sprite.Sprite):
                 #print "hit xWall"
     
     def collideBlock(self, block):
-        self.speedx = -self.speedx
-        self.speedy = -self.speedy
+        self.speedx = random.randint(-4,4)
+        self.speedy = random.randint(-4,4)
     
     def animate(self):
         if self.waitCount < self.maxWait:
@@ -78,6 +69,7 @@ class ShammyTowel(pygame.sprite.Sprite):
                 self.frame += 1
             else:
                 self.frame = 0
+        self.image = self.images[self.frame]
     
     def detect(self, Player):
         if self.distToPoint(player.rect.center) < self.detectionRadius:

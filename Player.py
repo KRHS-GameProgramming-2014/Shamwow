@@ -21,7 +21,7 @@ class Player(Entity):
         self.maxWait = 60*.25
         self.image = self.images[self.frame]
         self.rect = self.image.get_rect(center = self.rect.center)
-        self.maxSpeed = 4
+        self.maxSpeed = 5
         self.living = True
             
     def update(*args):

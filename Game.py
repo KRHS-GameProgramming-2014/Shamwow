@@ -31,11 +31,13 @@ keys = pygame.sprite.Group()
 shammys = pygame.sprite.Group()
 #towelHeads = pygame.sprite.Group()
 levelBlocks = pygame.sprite.Group()
+shamFlaps = pygame.sprite.Group()
 all = pygame.sprite.OrderedUpdates()
 
 Entity.containers = (all, entities)
 Player.containers = (all, players)
 ShammyTowel.containers = (all, shammys)
+ShamFlap.containers = (all, shammys, shamFlaps)
 #towelHead = (all, towelHeads)
 BackGround.containers = (all, backgrounds)
 Block.containers = (all, blocks) 
@@ -78,7 +80,7 @@ while True:
     
 
     level = Level(75, size)
-    level.loadLevel("01") 
+    level.loadLevel("31") 
 
     player = Player([width/3, height/2])
     """
@@ -158,6 +160,10 @@ while True:
         for shammy in shammysHitBlock:
             for block in shammysHitBlock[shammy]:
                 shammy.collideBlock(shammy)
+        shamFlapFacesPlayer = pygame.sprite.groupcollide(shamFlaps, players, False, False)
+        for shamFlap in shamFlapFacesPlayer:
+            for players in shamFlapFacesPlayer[shamFlap]:
+                shamFlap.facePlayer(shamFlap)
                         
         all.update(width, height)
 

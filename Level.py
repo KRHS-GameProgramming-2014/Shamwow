@@ -6,6 +6,7 @@ from wall import Block
 from wall import BgBlock
 from Shammy import ShammyTowel
 from key import Key
+from towelHead import ShamFlap
 
 class Level():
     def __init__(self, blockSize, screenSize, levelLinkFile = "RSC/Level/levels.link", keyLinkFile = "RSC/Level/keys.link"):
@@ -60,7 +61,8 @@ class Level():
         #print self.level
         levelFile = "RSC/Level/" + "Level" + level +".lvl"
         #print levelFile
-        monsters = {"shammy": []}
+        monsters = {"shammy": [],
+                    "shamflap": []}
         f = open(levelFile, "r")
         lines = f.readlines()
         f.close()
@@ -184,6 +186,11 @@ class Level():
                           [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
                           self.blockSize)
                     monsters["shammy"] += [[(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)]]
+                if c == ".": #shamflapblock
+                    BgBlock("RSC/Background Images/basichallway.png",
+                          [(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)],
+                          self.blockSize)
+                    monsters["shamflap"] += [[(x*self.blockSize)+(self.blockSize/2), (y*self.blockSize)+(self.blockSize/2)]]
                 if c in "abcdefghijklmno": #KEYS
                     #print "KEY!!!!!!!!!!!!!!!!!!!!!!!!"
                     BgBlock("RSC/Background Images/basichallway.png",
@@ -293,3 +300,5 @@ class Level():
                           self.blockSize)
         for shammy in monsters["shammy"]:
             ShammyTowel(shammy)
+        for shamflap in monsters["shamflap"]:
+            ShamFlap(shamflap)
