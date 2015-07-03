@@ -79,9 +79,9 @@ class ShamFlap(pygame.sprite.Sprite):
                 self.frame = 0
         self.image = self.images[self.frame]
         
-    def facePlayer(self, Player):
-        xdiff = Player.rect.center[0] - self.rect.center[0]
-        ydiff = Player.rect.center[1] - self.rect.center[1]
+    def facePlayer(self, player):
+        xdiff = player.rect.center[0] - self.rect.center[0]
+        ydiff = player.rect.center[1] - self.rect.center[1]
         
         if xdiff > 0: #go right
             self.speedx = self.speedx
@@ -97,9 +97,9 @@ class ShamFlap(pygame.sprite.Sprite):
         else:
             self.speedy = 0
             
-    def detect(self, Player):
+    def detect(self,player):
         if self.distToPoint(player.rect.center) < self.detectionRadius:
-            pX = Player.rect.center[0]
+            pX = player.rect.center[0]
             pY = Player.rect.center[1]
             zX = self.rect.center[0]
             zY = self.rect.center[1]
