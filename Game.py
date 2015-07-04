@@ -154,7 +154,7 @@ while True:
         
         shammysHitPlayer = pygame.sprite.groupcollide(shammys, players, False, False)
         for shammy in shammysHitPlayer:
-            for players in shammysHitPlayer[shammy]:
+            for player in shammysHitPlayer[shammy]: #clobbered players group with small typo
                 player.collideShammy(shammy)
         shammysHitBlock = pygame.sprite.groupcollide(shammys, blocks, False, False)
         for shammy in shammysHitBlock:
@@ -162,10 +162,10 @@ while True:
                 shammy.collideBlock(shammy)
         shamFlapFacesPlayer = pygame.sprite.groupcollide(shamFlaps, players, False, False)
         for shamFlap in shamFlapFacesPlayer:
-            for players in shamFlapFacesPlayer[shamFlap]:
+            for player in shamFlapFacesPlayer[shamFlap]: #clobbered players group with small typo
                 shamFlap.facePlayer(shamFlap)
                         
-        all.update(width, height)
+        all.update(width, height, player) #have to pass reference to player object to others so that they know where he is.
 
         dirty = all.draw(screen)
         pygame.display.update(dirty)

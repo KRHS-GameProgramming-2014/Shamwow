@@ -16,6 +16,7 @@ class ShamFlap(pygame.sprite.Sprite):
                          pygame.image.load("RSC/Enemy Images/ththing/sh3-2.png"),]
         self.changed = False
         self.images = self.upImages
+        self.maxSpeed = 10 # need this for face player
         self.speedx = random.randint(-10,10)
         self.speedy = random.randint(-10,10)
         self.speed = [self.speedx, self.speedy]
@@ -38,14 +39,16 @@ class ShamFlap(pygame.sprite.Sprite):
         self = args[0]
         width = args[1]
         height = args[2]
+        player = args[3] #player instance from updaye
         self.didBounceX = False
         self.didBounceY = False
+        self.facePlayer(player) #pass player instance to face player, this should happen before move.
         self.speed = [self.speedx, self.speedy]
         self.move()
         self.collideWall(width, height)
         self.animate()
         self.changed = False
-        self.facePlayer(Player)
+        
         
     def move(self):
         self.rect = self.rect.move(self.speed)
@@ -84,16 +87,16 @@ class ShamFlap(pygame.sprite.Sprite):
         ydiff = player.rect.center[1] - self.rect.center[1]
         
         if xdiff > 0: #go right
-            self.speedx = self.speedx
+            self.speedx = self.maxSpeed
         elif xdiff < 0: #go left
-            self.speedx = -self.speedx
+            self.speedx = -self.maxSpeed
         else:
             self.speedx = 0
         
         if ydiff > 0: #go down
-            self.speedy = self.speedy
+            self.speedy = self.maxSpeed
         elif ydiff < 0: #go up
-            self.speedy = -self.speedy
+            self.speedy = -self.maxSpeed
         else:
             self.speedy = 0
             
